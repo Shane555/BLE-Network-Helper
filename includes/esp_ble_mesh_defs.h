@@ -809,7 +809,36 @@ typedef uint8_t esp_ble_mesh_model_status_t;
 #define ESP_BLE_MESH_MODEL_STATUS_CANNOT_SET_RANGE_MAX              0x02
 
 
+#ifndef BD_ADDR_LEN
+#define BD_ADDR_LEN     6
+typedef uint8_t BD_ADDR[BD_ADDR_LEN];
+#endif
 
+typedef uint8_t esp_ble_mesh_bd_addr_t[BD_ADDR_LEN];
+/// BLE device address type
+typedef uint8_t esp_ble_mesh_addr_type_t;
+
+/** Information of the provisioned node */
+typedef struct {
+    /* Device information */
+    esp_ble_mesh_bd_addr_t   addr;      /*!< Node device address */
+    esp_ble_mesh_addr_type_t addr_type; /*!< Node device address type */
+    uint8_t  dev_uuid[16];  /*!< Device UUID */
+    uint16_t oob_info;      /*!< Node OOB information */
+
+    /* Provisioning information */
+    uint16_t unicast_addr;  /*!< Node unicast address */
+    uint8_t  element_num;   /*!< Node element number */
+    uint16_t net_idx;       /*!< Node NetKey Index */
+    uint8_t  flags;         /*!< Node key refresh flag and iv update flag */
+    uint32_t iv_index;      /*!< Node IV Index */
+    uint8_t  dev_key[16];   /*!< Node device key */
+
+    /* Additional information */
+    char name[ESP_BLE_MESH_NODE_NAME_MAX_LEN + 1]; /*!< Node name */
+    uint16_t comp_length;  /*!< Length of Composition Data */
+    uint8_t *comp_data;    /*!< Value of Composition Data */
+} __attribute__((packed)) esp_ble_mesh_node_t;
 #ifdef __cplusplus
 }
 #endif
