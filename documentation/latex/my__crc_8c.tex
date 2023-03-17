@@ -1,0 +1,34 @@
+\hypertarget{my__crc_8c}{}\doxysection{srcs/my\+\_\+crc.c File Reference}
+\label{my__crc_8c}\index{srcs/my\_crc.c@{srcs/my\_crc.c}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{my__crc_8c_a35c11fb2ab82f44f7e35b7836abb7788}{CRCCCITT}} (uint8\+\_\+t $\ast$data, size\+\_\+t length\+\_\+of\+\_\+interest)
+\begin{DoxyCompactList}\small\item\em Runs a CRC-\/16-\/\+CCITT checksum algorithm. It will return and generate 2 bytes of checksum if you are sender. If you are receiver, run the function with the length\+\_\+of\+\_\+interest accounting for the last 2 bytes of crc. It should return 0 to indicate no data loss for 99.\+9984\% of the time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{my__crc_8c_a35c11fb2ab82f44f7e35b7836abb7788}\label{my__crc_8c_a35c11fb2ab82f44f7e35b7836abb7788}} 
+\index{my\_crc.c@{my\_crc.c}!CRCCCITT@{CRCCCITT}}
+\index{CRCCCITT@{CRCCCITT}!my\_crc.c@{my\_crc.c}}
+\doxysubsubsection{\texorpdfstring{CRCCCITT()}{CRCCCITT()}}
+{\footnotesize\ttfamily uint16\+\_\+t CRCCCITT (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{size\+\_\+t}]{length\+\_\+of\+\_\+interest }\end{DoxyParamCaption})}
+
+
+
+Runs a CRC-\/16-\/\+CCITT checksum algorithm. It will return and generate 2 bytes of checksum if you are sender. If you are receiver, run the function with the length\+\_\+of\+\_\+interest accounting for the last 2 bytes of crc. It should return 0 to indicate no data loss for 99.\+9984\% of the time. 
+
+Name \+: \char`\"{}\+CRC-\/16/\+CITT\char`\"{} Width \+: 16 Poly \+: 1021 Init \+: FFFF Ref\+In \+: False Ref\+Out \+: False Xor\+Out \+: 0000 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & buffer with a size of the message contents + 2 bytes for CRC portion. This buffer\textquotesingle{}s data must be in little endian format regardless of checking or receiving \\
+\hline
+{\em length\+\_\+of\+\_\+interest} & number of bytes of interest in message content(exclude CRC part) if generating CRC. If checking CRC, must account for the number of bytes for CRC in length \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t FOR SENDER\+: returns crc checksum value. FOR RECEIVER\+: returns 0 if no data loss 
+\end{DoxyReturn}

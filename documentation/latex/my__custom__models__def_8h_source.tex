@@ -1,0 +1,108 @@
+\hypertarget{my__custom__models__def_8h_source}{}\doxysection{my\+\_\+custom\+\_\+models\+\_\+def.\+h}
+\label{my__custom__models__def_8h_source}\index{includes/my\_custom\_models\_def.h@{includes/my\_custom\_models\_def.h}}
+\mbox{\hyperlink{my__custom__models__def_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ CUSTOM\_MODELS\_DEF}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ CUSTOM\_MODELS\_DEF}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}esp\_ble\_mesh\_defs.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ BACKEND\_PROV\_OP\_3(b0,\ cid)\ \ \ \ ((((b0)\ <<\ 16)\ |\ 0xD00000)\ |\ (cid))}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CID\_ESP\ 0x02E5\ }\textcolor{comment}{//esp's\ company\ id\ for\ BLE}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_ID\_CLIENT\ 0x0002}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_ID\_SERVER\ 0x0003}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_OP\_GET\ ESP\_BLE\_MESH\_MODEL\_OP\_3(0x0A,\ CID\_ESP)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_OP\_STATUS\ ESP\_BLE\_MESH\_MODEL\_OP\_3(0x0B,\ CID\_ESP)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_OP\_SET\ ESP\_BLE\_MESH\_MODEL\_OP\_3(0x0C,\ CID\_ESP)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_OP\_SET\_UNACK\ ESP\_BLE\_MESH\_MODEL\_OP\_3(0x0D,\ CID\_ESP)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_OP\_INTR\_STATUS\ ESP\_BLE\_MESH\_MODEL\_OP\_3(0x0E,\ CID\_ESP)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ ESP\_BLE\_MESH\_VND\_MODEL\_OP\_DUMMY\_SET\ ESP\_BLE\_MESH\_MODEL\_OP\_3(0x0F,\ CID\_ESP)}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ PROV\_MODE\_SET\ BACKEND\_PROV\_OP\_3(0x00,\ CID\_ESP)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ PROV\_MODE\_GET\ BACKEND\_PROV\_OP\_3(0x01,\ CID\_ESP)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ PROV\_MODE\_STATUS\ BACKEND\_PROV\_OP\_3(0x02,\ CID\_ESP)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ PROV\_MODE\_NODE\_RESET\ BACKEND\_PROV\_OP\_3(0x03,\ CID\_ESP)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ PROV\_ADD\_NETKEY\ BACKEND\_PROV\_OP\_3(0x04,\ CID\_ESP)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ PROV\_ADD\_APPKEY\ BACKEND\_PROV\_OP\_3(0x05,\ CID\_ESP)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ PROV\_KEY\_SUCCESS\ BACKEND\_PROV\_OP\_3(0x06,\ CID\_ESP)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ PROV\_KEY\_FAIL\ BACKEND\_PROV\_OP\_3(0x07,\ CID\_ESP)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ MESH\_CLIENT\_TIMEOUT\ BACKEND\_PROV\_OP\_3(0x08,\ CID\_ESP)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PROV\_NODE\_INFO\ BACKEND\_PROV\_OP\_3(0x0F,\ CID\_ESP)}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ SENSOR\_PAYLOAD\_BYTES\ 5}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ MSG\_C\_BYTES\ (SENSOR\_PAYLOAD\_BYTES+5)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ MSG\_A\_BYTES\ (MSG\_C\_BYTES\ +2)\ }\textcolor{comment}{//Msg\ A\ sensor\ format\ bytes}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BLE\_NET\_CONFIG\_PAYLOAD\_BYTES\ 28\ }\textcolor{comment}{//bluetooth\ network\ config\ payload\ for\ message\ A(config\ message)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ MSG\_A\_NON\_NET\_PAYLOAD\ 7\ \ }\textcolor{comment}{//non\ bluetooth\ config\ payload\ portions\ of\ MsgA\ config\ format}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ MSG\_A\_CONFIG\_BYTES\ (BLE\_NET\_CONFIG\_PAYLOAD\_BYTES+MSG\_A\_NON\_NET\_PAYLOAD)\ }\textcolor{comment}{//MsgA\ config\ format\ bytes}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BACKEND\_PROV\_DATA\_PAYLOAD\_BYTES\ 8\ }\textcolor{comment}{//backend\ provisioning\ data\ payload,\ does\ not\ include\ PROV\_NODE\_INFO\ command\ }}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ MSG\_A\_BACKEND\_PROV\_BYTES\ (BACKEND\_PROV\_DATA\_PAYLOAD\_BYTES+5)\ }\textcolor{comment}{//MsgA\ backend\ provision\ format\ bytes}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//for\ client\ model\ usage}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ MSG\_SEND\_TTL\ 7}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MSG\_SEND\_REL\ false}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ MSG\_TIMEOUT\ 0}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ MSG\_ROLE\ ROLE\_NODE}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{my__custom__models__def_8h_ab898071398b359603a35c202e9c65f3b}{\_\_attribute\_\_}}((packed))}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ uint8\_t\ byte0;}
+\DoxyCodeLine{00050\ \ \ uint8\_t\ byte1;}
+\DoxyCodeLine{00051\ \ \ uint8\_t\ byte2;}
+\DoxyCodeLine{00052\ \ \ uint8\_t\ byte3;}
+\DoxyCodeLine{00053\ \ \ uint8\_t\ byte4;}
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\_sensor\_data\_t}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00057\ \ \ uint32\_t\ \mbox{\hyperlink{structprov__mode__get__t_a7c6574c1a0ef114f287001edfd899920}{prov\_payload}};}
+\DoxyCodeLine{00058\ \}\mbox{\hyperlink{structprov__mode__get__t}{prov\_mode\_get\_t}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00061\ \ \ uint32\_t\ \mbox{\hyperlink{structprov__mode__set__t_a5d3d6fd911589a417f290980d8819e44}{prov\_payload}};}
+\DoxyCodeLine{00062\ \}\mbox{\hyperlink{structprov__mode__set__t}{prov\_mode\_set\_t}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00065\ \ \ uint8\_t\ \mbox{\hyperlink{structprov__mode__status__t_a2a41e926d24cf737e3078cc1f45f96bf}{prov\_is\_true}};}
+\DoxyCodeLine{00066\ \}\mbox{\hyperlink{structprov__mode__status__t}{prov\_mode\_status\_t}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00069\ \ \ uint32\_t\ \mbox{\hyperlink{structprov__mode__node__reset__t_a60167453e36ce2c90adae2a4d0594ed1}{prov\_payload}};}
+\DoxyCodeLine{00070\ \}\mbox{\hyperlink{structprov__mode__node__reset__t}{prov\_mode\_node\_reset\_t}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00073\ \ \ uint16\_t\ \mbox{\hyperlink{structprov__add__netkey__t_a9368f62532c6c0b3e749189751a6bf02}{net\_idx}};}
+\DoxyCodeLine{00074\ \}\mbox{\hyperlink{structprov__add__netkey__t}{prov\_add\_netkey\_t}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00077\ \ \ uint16\_t\ \mbox{\hyperlink{structprov__add__appkey__t_a3b60d4ffbb876777aefad0c46a49d897}{net\_idx}};}
+\DoxyCodeLine{00078\ \ \ uint16\_t\ \mbox{\hyperlink{structprov__add__appkey__t_a637f78fad45a091b2528d4bb9fcf213c}{app\_idx}};}
+\DoxyCodeLine{00079\ \}\mbox{\hyperlink{structprov__add__appkey__t}{prov\_add\_appkey\_t}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00082\ \ \ uint32\_t\ \mbox{\hyperlink{structprov__key__success__t_a28ff7d3717c63a40beb1854c3d47eaf8}{opcode}};}
+\DoxyCodeLine{00083\ \ \ uint16\_t\ \mbox{\hyperlink{structprov__key__success__t_a0455929f6ce83ba851b97aa1c9fa341b}{net\_idx}};}
+\DoxyCodeLine{00084\ \ \ uint16\_t\ \mbox{\hyperlink{structprov__key__success__t_aa42d7e8bd5dfe5d89c498c32553a8404}{app\_idx}};}
+\DoxyCodeLine{00085\ \}\mbox{\hyperlink{structprov__key__success__t}{prov\_key\_success\_t}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00088\ \ \ uint32\_t\ \mbox{\hyperlink{structprov__key__fail__t_a5c9383589e8e1d74025eb359443f5310}{opcode}};}
+\DoxyCodeLine{00089\ \}\mbox{\hyperlink{structprov__key__fail__t}{prov\_key\_fail\_t}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{structprov__mode__get__t}{prov\_mode\_get\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_a1fbc369034fc3d308a6c285c6fb4f18e}{prov\_mode\_get}};}
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{structprov__mode__set__t}{prov\_mode\_set\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_a55fa519982a023cfc555a9c8bc03fdbe}{prov\_mode\_set}};}
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{structprov__mode__status__t}{prov\_mode\_status\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_abd6a49f44220a4c26bb7be19660ea9c0}{prov\_mode\_status}};}
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{structprov__mode__node__reset__t}{prov\_mode\_node\_reset\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_ab937b31bb3a1ef96c914a10599c426ea}{prov\_mode\_node\_reset}};}
+\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{structprov__add__netkey__t}{prov\_add\_netkey\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_a45dfdec08f429b6044de52ef644f0b71}{prov\_add\_net\_key}};}
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{structprov__add__appkey__t}{prov\_add\_appkey\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_a839ac99549e954bf83248388e92ab367}{prov\_add\_app\_key}};}
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{structprov__key__success__t}{prov\_key\_success\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_a9c8fc28bbfb3f63532f3e74fe977d8de}{prov\_key\_success}};}
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{structprov__key__fail__t}{prov\_key\_fail\_t}}\ \mbox{\hyperlink{unionbackend__prov__data__t_abf439e637f913641406704aad99c7632}{prov\_key\_fail}};}
+\DoxyCodeLine{00100\ \}\ \mbox{\hyperlink{unionbackend__prov__data__t}{backend\_prov\_data\_t}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CUSTOM\_MODELS\_DEF}}
+
+\end{DoxyCode}

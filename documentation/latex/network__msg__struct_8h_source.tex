@@ -1,4 +1,5 @@
 \hypertarget{network__msg__struct_8h_source}{}\doxysection{network\+\_\+msg\+\_\+struct.\+h}
+\label{network__msg__struct_8h_source}\index{includes/network\_msg\_struct.h@{includes/network\_msg\_struct.h}}
 \mbox{\hyperlink{network__msg__struct_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
@@ -8,48 +9,59 @@
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#if\ defined\ (\_\_GLIBC\_\_)}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#\ include\ <endian.h>}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#\ if\ (\_\_BYTE\_ORDER\ ==\ \_\_LITTLE\_ENDIAN)}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#error\ "{}invalid\ endianness"{}}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#\ if\ (\_\_BYTE\_ORDER\ ==\ \_\_LITTLE\_ENDIAN)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#error\ "{}invalid\ endianness"{}}}
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00023\ }
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}esp\_ble\_mesh\_defs.h"{}}}
 \DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}esp\_ble\_mesh\_config\_model\_api.h"{}}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}my\_custom\_models\_def.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{my__custom__models__def_8h}{my\_custom\_models\_def.h}}"{}}}
 \DoxyCodeLine{00027\ }
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
 \DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
 \DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }}
-\DoxyCodeLine{00038\ \{}
-\DoxyCodeLine{00039\ \ \ esp\_ble\_mesh\_cfg\_client\_get\_state\_t\ get\_state;}
-\DoxyCodeLine{00040\ \ \ esp\_ble\_mesh\_cfg\_client\_set\_state\_t\ set\_state;}
-\DoxyCodeLine{00041\ \}\mbox{\hyperlink{unioncfg__state__t}{cfg\_state\_t}};}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00049\ uint32\_t\ \mbox{\hyperlink{network__msg__struct_8h_a13339b6abe2cbc92992726bd2a303d52}{extract\_opcode}}(uint8\_t\ *buf);}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00057\ uint16\_t\ \mbox{\hyperlink{network__msg__struct_8h_a1cf6d66b30d53e988eb49735945e3456}{extract\_addr}}(uint8\_t\ *buf);}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00066\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_a18132a5c4d0c74e342b86d788143b30c}{extract\_sensor\_data\_msgA}}(uint8\_t\ *buf,\ model\_sensor\_data\_t\ *sensor\_buf);}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00075\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_abb95e34affeff57b5953f75c96bda3f1}{extract\_bt\_data\_msgA}}(uint8\_t*\ buf,\ \mbox{\hyperlink{unioncfg__state__t}{cfg\_state\_t}}*\ state);}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00085\ uint8\_t*\ \mbox{\hyperlink{network__msg__struct_8h_a673d16b99488dd67a167061544ecfe5c}{set\_sensor\_data\_msgA}}(uint32\_t\ opcode,\ uint16\_t\ addr,\ model\_sensor\_data\_t\ *sensor\_buf);}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00095\ uint8\_t*\ \mbox{\hyperlink{network__msg__struct_8h_ab84719454758c0f7bf6293ec86cac369}{set\_bt\_data\_msgA}}(uint32\_t\ opcode,\ uint16\_t\ addr,\ \mbox{\hyperlink{unioncfg__state__t}{cfg\_state\_t}}\ *state);}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00104\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_aed51623ed07781a7b6c05e768f919426}{extract\_sensor\_data\_msgC}}(uint8\_t\ *buf,\ model\_sensor\_data\_t*\ sensor\_buf);}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00113\ uint8\_t*\ \mbox{\hyperlink{network__msg__struct_8h_ad5a879a933d3b3bededfa1583d519a92}{set\_sensor\_data\_msgC}}(uint32\_t\ opcode,\ model\_sensor\_data\_t\ *sensor\_buf);}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ pack(1)\ }\textcolor{comment}{//ensure\ no\ padding\ in\ cfg\_state\_t}}
+\DoxyCodeLine{00038\ \textcolor{comment}{}typedef\ union\ }
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ esp\_ble\_mesh\_cfg\_client\_get\_state\_t\ \mbox{\hyperlink{unioncfg__state__t_ae6d2a22a2271ef81b1b27f988d898d94}{get\_state}};}
+\DoxyCodeLine{00041\ \ \ esp\_ble\_mesh\_cfg\_client\_set\_state\_t\ \mbox{\hyperlink{unioncfg__state__t_a828632a886f515a45ac2d1e64b845a76}{set\_state}};}
+\DoxyCodeLine{00042\ \ \ esp\_ble\_mesh\_cfg\_client\_common\_cb\_param\_t\ \mbox{\hyperlink{unioncfg__state__t_af5fbc7a4246a7cb99191a755cccf4f6e}{status\_state}};}
+\DoxyCodeLine{00043\ \}\mbox{\hyperlink{unioncfg__state__t}{cfg\_state\_t}};}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#pragma\ pack()}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ uint32\_t\ \mbox{\hyperlink{network__msg__struct_8h_a13339b6abe2cbc92992726bd2a303d52}{extract\_opcode}}(uint8\_t\ *buf);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ uint16\_t\ \mbox{\hyperlink{network__msg__struct_8h_a1cf6d66b30d53e988eb49735945e3456}{extract\_addr}}(uint8\_t\ *buf);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_a18132a5c4d0c74e342b86d788143b30c}{extract\_sensor\_data\_msgA}}(uint8\_t\ *buf,\ \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\_sensor\_data\_t}}\ *sensor\_buf);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_abb95e34affeff57b5953f75c96bda3f1}{extract\_bt\_data\_msgA}}(uint8\_t*\ buf,\ \mbox{\hyperlink{unioncfg__state__t}{cfg\_state\_t}}*\ state);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_a5756a1dc83428825ef7bd4f80ba6c0f3}{extract\_backend\_prov\_data\_msgA}}(uint8\_t\ *buf,\ \mbox{\hyperlink{unionbackend__prov__data__t}{backend\_prov\_data\_t}}\ *prov\_data);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_aadd62914a71b072fdee87f3862b9ff2b}{extract\_node\_data\_msgA}}(uint8\_t\ *buf,\ esp\_ble\_mesh\_node\_t\ *node\_info);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{network__msg__struct_8h_ae93d0e70ca1f87f957a65aa999daacf5}{free\_node\_data}}(esp\_ble\_mesh\_node\_t\ *node\_info);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00113\ uint8\_t*\ \mbox{\hyperlink{network__msg__struct_8h_a673d16b99488dd67a167061544ecfe5c}{set\_sensor\_data\_msgA}}(uint32\_t\ opcode,\ uint16\_t\ addr,\ \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\_sensor\_data\_t}}\ *sensor\_buf);}
 \DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
-\DoxyCodeLine{00117\ \}}
-\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NET\_MSG\_STRUCT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00123\ uint8\_t*\ \mbox{\hyperlink{network__msg__struct_8h_ab84719454758c0f7bf6293ec86cac369}{set\_bt\_data\_msgA}}(uint32\_t\ opcode,\ uint16\_t\ addr,\ \mbox{\hyperlink{unioncfg__state__t}{cfg\_state\_t}}\ *state);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ uint8\_t\ *\mbox{\hyperlink{network__msg__struct_8h_a6e7cfae13eae875e270f1c966b517425}{set\_backend\_prov\_data\_msgA}}(uint32\_t\ opcode,\ \mbox{\hyperlink{unionbackend__prov__data__t}{backend\_prov\_data\_t}}\ *prov\_data);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00141\ int32\_t\ \mbox{\hyperlink{network__msg__struct_8h_aed51623ed07781a7b6c05e768f919426}{extract\_sensor\_data\_msgC}}(uint8\_t\ *buf,\ \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\_sensor\_data\_t}}*\ sensor\_buf);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00151\ uint8\_t*\ \mbox{\hyperlink{network__msg__struct_8h_ad5a879a933d3b3bededfa1583d519a92}{set\_sensor\_data\_msgC}}(uint32\_t\ opcode,\ \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\_sensor\_data\_t}}\ *sensor\_buf);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00155\ \}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NET\_MSG\_STRUCT\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

@@ -1,0 +1,16 @@
+BLE Mesh Helper APIs for packing and unpacking BLE mesh messages\hypertarget{md_README_autotoc_md1}{}\doxysection{Guideline to library usage}\label{md_README_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item Download the library
+\item Build from source, use your custom build system(for embedded compiler toolchain) or use Cmake(Version 3.\+1.\+6 minimum) for Linux/\+Windows
+
+if using Cmake
+\begin{DoxyEnumerate}
+\item go to BLE-\/\+Network-\/\+Helper dir and make a \textquotesingle{}build\textquotesingle{} directory
+\item go to build directory and run {\ttfamily cmake ..} for static library or {\ttfamily cmake .. -\/DBUILD\+\_\+\+SHARED\+\_\+\+LIBS=ON} for shared library
+\item run {\ttfamily make} followed by {\ttfamily make install}. (for windows, instead of make, it will be something like {\ttfamily cmake -\/-\/build . -\/-\/target INSTALL} as a substitute)
+\end{DoxyEnumerate}
+\item To uninstall, remove all directories found in {\ttfamily install\+\_\+manifest.\+txt} created by cmake
+\end{DoxyEnumerate}
+
+Details of helper functions can be found \href{https://github.com/Shane555/BLE-Network-Helper/tree/main/documentation}{\texttt{ here}} 

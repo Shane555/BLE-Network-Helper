@@ -1,0 +1,277 @@
+\hypertarget{network__msg__struct_8c}{}\doxysection{srcs/network\+\_\+msg\+\_\+struct.c File Reference}
+\label{network__msg__struct_8c}\index{srcs/network\_msg\_struct.c@{srcs/network\_msg\_struct.c}}
+{\ttfamily \#include \char`\"{}network\+\_\+msg\+\_\+struct.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$endian.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}my\+\_\+crc.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{network__msg__struct_8c_a13339b6abe2cbc92992726bd2a303d52}{extract\+\_\+opcode}} (uint8\+\_\+t $\ast$buf)
+\begin{DoxyCompactList}\small\item\em extract opcode segment from any message. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{network__msg__struct_8c_a1cf6d66b30d53e988eb49735945e3456}{extract\+\_\+addr}} (uint8\+\_\+t $\ast$buf)
+\begin{DoxyCompactList}\small\item\em extract address segment from message A. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{network__msg__struct_8c_a18132a5c4d0c74e342b86d788143b30c}{extract\+\_\+sensor\+\_\+data\+\_\+msgA}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$sensor\+\_\+buf)
+\begin{DoxyCompactList}\small\item\em extract sensor data payload from buf to store in sensor\+\_\+buf \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{network__msg__struct_8c_abb95e34affeff57b5953f75c96bda3f1}{extract\+\_\+bt\+\_\+data\+\_\+msgA}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{unioncfg__state__t}{cfg\+\_\+state\+\_\+t}} $\ast$state)
+\begin{DoxyCompactList}\small\item\em extract bluetooth config data payload from buf to store in \mbox{\hyperlink{unioncfg__state__t}{cfg\+\_\+state\+\_\+t}} state \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{network__msg__struct_8c_a5756a1dc83428825ef7bd4f80ba6c0f3}{extract\+\_\+backend\+\_\+prov\+\_\+data\+\_\+msgA}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{unionbackend__prov__data__t}{backend\+\_\+prov\+\_\+data\+\_\+t}} $\ast$prov\+\_\+data)
+\begin{DoxyCompactList}\small\item\em extract backend prov data payload from buf to store in \mbox{\hyperlink{unionbackend__prov__data__t}{backend\+\_\+prov\+\_\+data\+\_\+t}} prov\+\_\+data \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{network__msg__struct_8c_aadd62914a71b072fdee87f3862b9ff2b}{extract\+\_\+node\+\_\+data\+\_\+msgA}} (uint8\+\_\+t $\ast$buf, esp\+\_\+ble\+\_\+mesh\+\_\+node\+\_\+t $\ast$node\+\_\+info)
+\begin{DoxyCompactList}\small\item\em extract node information when msgA of PROV\+\_\+\+NODE\+\_\+\+INFO opcode is sent to backend. Note buf is dynamically allocated \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__msg__struct_8c_ae93d0e70ca1f87f957a65aa999daacf5}{free\+\_\+node\+\_\+data}} (esp\+\_\+ble\+\_\+mesh\+\_\+node\+\_\+t $\ast$node\+\_\+info)
+\begin{DoxyCompactList}\small\item\em free dynamically allocated pointer esp\+\_\+ble\+\_\+mesh\+\_\+node\+\_\+t$\ast$ node\+\_\+info after \char`\"{}extract\+\_\+back\+\_\+end\+\_\+prov\+\_\+data\+\_\+msg\+A()\char`\"{} \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{network__msg__struct_8c_a673d16b99488dd67a167061544ecfe5c}{set\+\_\+sensor\+\_\+data\+\_\+msgA}} (uint32\+\_\+t opcode, uint16\+\_\+t addr, \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$sensor\+\_\+buf)
+\begin{DoxyCompactList}\small\item\em Set the buffer containing sensor message A , which includes generating and setting the crc in message A. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{network__msg__struct_8c_ab84719454758c0f7bf6293ec86cac369}{set\+\_\+bt\+\_\+data\+\_\+msgA}} (uint32\+\_\+t opcode, uint16\+\_\+t addr, \mbox{\hyperlink{unioncfg__state__t}{cfg\+\_\+state\+\_\+t}} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Set the buffer containing bt message A , which includes generating and setting the crc in message A. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{network__msg__struct_8c_a6e7cfae13eae875e270f1c966b517425}{set\+\_\+backend\+\_\+prov\+\_\+data\+\_\+msgA}} (uint32\+\_\+t opcode, \mbox{\hyperlink{unionbackend__prov__data__t}{backend\+\_\+prov\+\_\+data\+\_\+t}} $\ast$prov\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Set the buffer containing backend prov message A , which includes generating and setting the crc in message A. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{network__msg__struct_8c_aed51623ed07781a7b6c05e768f919426}{extract\+\_\+sensor\+\_\+data\+\_\+msgC}} (uint8\+\_\+t $\ast$buf, \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$sensor\+\_\+buf)
+\begin{DoxyCompactList}\small\item\em extract sensor data payload from buf to store in sensor\+\_\+buf \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{network__msg__struct_8c_ad5a879a933d3b3bededfa1583d519a92}{set\+\_\+sensor\+\_\+data\+\_\+msgC}} (uint32\+\_\+t opcode, \mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$sensor\+\_\+buf)
+\begin{DoxyCompactList}\small\item\em Set the buffer containing message C , which includes generating and setting the crc in message C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{network__msg__struct_8c_a1cf6d66b30d53e988eb49735945e3456}\label{network__msg__struct_8c_a1cf6d66b30d53e988eb49735945e3456}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!extract\_addr@{extract\_addr}}
+\index{extract\_addr@{extract\_addr}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{extract\_addr()}{extract\_addr()}}
+{\footnotesize\ttfamily uint16\+\_\+t extract\+\_\+addr (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+extract address segment from message A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & pointer to message A \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t unicast addr or group addr, 0 if fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_a5756a1dc83428825ef7bd4f80ba6c0f3}\label{network__msg__struct_8c_a5756a1dc83428825ef7bd4f80ba6c0f3}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!extract\_backend\_prov\_data\_msgA@{extract\_backend\_prov\_data\_msgA}}
+\index{extract\_backend\_prov\_data\_msgA@{extract\_backend\_prov\_data\_msgA}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{extract\_backend\_prov\_data\_msgA()}{extract\_backend\_prov\_data\_msgA()}}
+{\footnotesize\ttfamily int32\+\_\+t extract\+\_\+backend\+\_\+prov\+\_\+data\+\_\+msgA (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{unionbackend__prov__data__t}{backend\+\_\+prov\+\_\+data\+\_\+t}} $\ast$}]{prov\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+extract backend prov data payload from buf to store in \mbox{\hyperlink{unionbackend__prov__data__t}{backend\+\_\+prov\+\_\+data\+\_\+t}} prov\+\_\+data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buf should have enough data allocated and user should ensure it contains message A backend prov msg format \\
+\hline
+{\em prov\+\_\+data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns 0 if successful, -\/1 if fail. Note\+: returning 0 does not guarantee succcess unless buf contains correct data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_abb95e34affeff57b5953f75c96bda3f1}\label{network__msg__struct_8c_abb95e34affeff57b5953f75c96bda3f1}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!extract\_bt\_data\_msgA@{extract\_bt\_data\_msgA}}
+\index{extract\_bt\_data\_msgA@{extract\_bt\_data\_msgA}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{extract\_bt\_data\_msgA()}{extract\_bt\_data\_msgA()}}
+{\footnotesize\ttfamily int32\+\_\+t extract\+\_\+bt\+\_\+data\+\_\+msgA (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{unioncfg__state__t}{cfg\+\_\+state\+\_\+t}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+extract bluetooth config data payload from buf to store in \mbox{\hyperlink{unioncfg__state__t}{cfg\+\_\+state\+\_\+t}} state 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buf should have enough data allocated and user should ensure it contains message A bluetooth config msg format \\
+\hline
+{\em state} & empty buffer to store bt config data, must be initialised first \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns 0 if successful, -\/1 if fail. Note\+: returning 0 does not guarantee succcess unless buf contains correct data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_aadd62914a71b072fdee87f3862b9ff2b}\label{network__msg__struct_8c_aadd62914a71b072fdee87f3862b9ff2b}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!extract\_node\_data\_msgA@{extract\_node\_data\_msgA}}
+\index{extract\_node\_data\_msgA@{extract\_node\_data\_msgA}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{extract\_node\_data\_msgA()}{extract\_node\_data\_msgA()}}
+{\footnotesize\ttfamily int32\+\_\+t extract\+\_\+node\+\_\+data\+\_\+msgA (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{esp\+\_\+ble\+\_\+mesh\+\_\+node\+\_\+t $\ast$}]{node\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+extract node information when msgA of PROV\+\_\+\+NODE\+\_\+\+INFO opcode is sent to backend. Note buf is dynamically allocated 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & msgA format for PROV\+\_\+\+NODE\+\_\+\+INFO special opcode \\
+\hline
+{\em node\+\_\+info} & pointer that will be initialised to node information after function call \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of nodes provisioned, -\/1 if fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_a13339b6abe2cbc92992726bd2a303d52}\label{network__msg__struct_8c_a13339b6abe2cbc92992726bd2a303d52}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!extract\_opcode@{extract\_opcode}}
+\index{extract\_opcode@{extract\_opcode}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{extract\_opcode()}{extract\_opcode()}}
+{\footnotesize\ttfamily uint32\+\_\+t extract\+\_\+opcode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf }\end{DoxyParamCaption})}
+
+
+
+extract opcode segment from any message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & pointer to message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t opcode, 0 if fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_a18132a5c4d0c74e342b86d788143b30c}\label{network__msg__struct_8c_a18132a5c4d0c74e342b86d788143b30c}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!extract\_sensor\_data\_msgA@{extract\_sensor\_data\_msgA}}
+\index{extract\_sensor\_data\_msgA@{extract\_sensor\_data\_msgA}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{extract\_sensor\_data\_msgA()}{extract\_sensor\_data\_msgA()}}
+{\footnotesize\ttfamily int32\+\_\+t extract\+\_\+sensor\+\_\+data\+\_\+msgA (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$}]{sensor\+\_\+buf }\end{DoxyParamCaption})}
+
+
+
+extract sensor data payload from buf to store in sensor\+\_\+buf 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buf should have enough data allocated and user should ensure it contains message A sensor msg format \\
+\hline
+{\em sensor\+\_\+buf} & empty buffer to store sensor data, must be initialised first \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns 0 if successful, -\/1 if fail. Note\+: returning 0 does not guarantee succcess unless buf contains correct data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_aed51623ed07781a7b6c05e768f919426}\label{network__msg__struct_8c_aed51623ed07781a7b6c05e768f919426}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!extract\_sensor\_data\_msgC@{extract\_sensor\_data\_msgC}}
+\index{extract\_sensor\_data\_msgC@{extract\_sensor\_data\_msgC}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{extract\_sensor\_data\_msgC()}{extract\_sensor\_data\_msgC()}}
+{\footnotesize\ttfamily int32\+\_\+t extract\+\_\+sensor\+\_\+data\+\_\+msgC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buf,  }\item[{\mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$}]{sensor\+\_\+buf }\end{DoxyParamCaption})}
+
+
+
+extract sensor data payload from buf to store in sensor\+\_\+buf 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & buf should have enough data allocated and user should ensure it contains message C msg format \\
+\hline
+{\em sensor\+\_\+buf} & empty buffer to store sensor data, must be initialised first \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns 0 if successful, -\/1 if fail. Note\+: returning 0 does not guarantee succcess unless buf contains correct data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_ae93d0e70ca1f87f957a65aa999daacf5}\label{network__msg__struct_8c_ae93d0e70ca1f87f957a65aa999daacf5}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!free\_node\_data@{free\_node\_data}}
+\index{free\_node\_data@{free\_node\_data}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{free\_node\_data()}{free\_node\_data()}}
+{\footnotesize\ttfamily void free\+\_\+node\+\_\+data (\begin{DoxyParamCaption}\item[{esp\+\_\+ble\+\_\+mesh\+\_\+node\+\_\+t $\ast$}]{node\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+free dynamically allocated pointer esp\+\_\+ble\+\_\+mesh\+\_\+node\+\_\+t$\ast$ node\+\_\+info after \char`\"{}extract\+\_\+back\+\_\+end\+\_\+prov\+\_\+data\+\_\+msg\+A()\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+info} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{network__msg__struct_8c_a6e7cfae13eae875e270f1c966b517425}\label{network__msg__struct_8c_a6e7cfae13eae875e270f1c966b517425}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!set\_backend\_prov\_data\_msgA@{set\_backend\_prov\_data\_msgA}}
+\index{set\_backend\_prov\_data\_msgA@{set\_backend\_prov\_data\_msgA}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{set\_backend\_prov\_data\_msgA()}{set\_backend\_prov\_data\_msgA()}}
+{\footnotesize\ttfamily uint8\+\_\+t $\ast$ set\+\_\+backend\+\_\+prov\+\_\+data\+\_\+msgA (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{opcode,  }\item[{\mbox{\hyperlink{unionbackend__prov__data__t}{backend\+\_\+prov\+\_\+data\+\_\+t}} $\ast$}]{prov\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Set the buffer containing backend prov message A , which includes generating and setting the crc in message A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opcode} & opcode of command \\
+\hline
+{\em prov\+\_\+data} & valid backend prov data pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns pointer to buffer(static define, not thread-\/safe) containing message A if successful, NULL if fail. Note\+: returning valid pointer does not guarantee succcess unless prov\+\_\+data contains correct data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_ab84719454758c0f7bf6293ec86cac369}\label{network__msg__struct_8c_ab84719454758c0f7bf6293ec86cac369}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!set\_bt\_data\_msgA@{set\_bt\_data\_msgA}}
+\index{set\_bt\_data\_msgA@{set\_bt\_data\_msgA}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{set\_bt\_data\_msgA()}{set\_bt\_data\_msgA()}}
+{\footnotesize\ttfamily uint8\+\_\+t $\ast$ set\+\_\+bt\+\_\+data\+\_\+msgA (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{opcode,  }\item[{uint16\+\_\+t}]{addr,  }\item[{\mbox{\hyperlink{unioncfg__state__t}{cfg\+\_\+state\+\_\+t}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+Set the buffer containing bt message A , which includes generating and setting the crc in message A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opcode} & opcode of command \\
+\hline
+{\em addr} & destination address \\
+\hline
+{\em state} & valid bt config data pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns pointer to buffer(static define, not thread-\/safe) containing message A if successful, NULL if fail. Note\+: returning valid pointer does not guarantee succcess unless state contains correct data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_a673d16b99488dd67a167061544ecfe5c}\label{network__msg__struct_8c_a673d16b99488dd67a167061544ecfe5c}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!set\_sensor\_data\_msgA@{set\_sensor\_data\_msgA}}
+\index{set\_sensor\_data\_msgA@{set\_sensor\_data\_msgA}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{set\_sensor\_data\_msgA()}{set\_sensor\_data\_msgA()}}
+{\footnotesize\ttfamily uint8\+\_\+t $\ast$ set\+\_\+sensor\+\_\+data\+\_\+msgA (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{opcode,  }\item[{uint16\+\_\+t}]{addr,  }\item[{\mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$}]{sensor\+\_\+buf }\end{DoxyParamCaption})}
+
+
+
+Set the buffer containing sensor message A , which includes generating and setting the crc in message A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opcode} & opcode of command \\
+\hline
+{\em addr} & destination address \\
+\hline
+{\em sensor\+\_\+buf} & valid sensor data pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns pointer to buffer(static define, not thread-\/safe) containing message A if successful, NULL if fail. Note\+: returning valid pointer does not guarantee succcess unless sensor\+\_\+buf contains correct data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{network__msg__struct_8c_ad5a879a933d3b3bededfa1583d519a92}\label{network__msg__struct_8c_ad5a879a933d3b3bededfa1583d519a92}} 
+\index{network\_msg\_struct.c@{network\_msg\_struct.c}!set\_sensor\_data\_msgC@{set\_sensor\_data\_msgC}}
+\index{set\_sensor\_data\_msgC@{set\_sensor\_data\_msgC}!network\_msg\_struct.c@{network\_msg\_struct.c}}
+\doxysubsubsection{\texorpdfstring{set\_sensor\_data\_msgC()}{set\_sensor\_data\_msgC()}}
+{\footnotesize\ttfamily uint8\+\_\+t $\ast$ set\+\_\+sensor\+\_\+data\+\_\+msgC (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{opcode,  }\item[{\mbox{\hyperlink{my__custom__models__def_8h_a04fa62189a131d2632415766076756be}{model\+\_\+sensor\+\_\+data\+\_\+t}} $\ast$}]{sensor\+\_\+buf }\end{DoxyParamCaption})}
+
+
+
+Set the buffer containing message C , which includes generating and setting the crc in message C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opcode} & opcode of command \\
+\hline
+{\em addr} & destination address \\
+\hline
+{\em sensor\+\_\+buf} & valid sensor data pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns pointer to buffer(static define, not thread-\/safe) containing message C if successful, NULL if fail. Note\+: returning valid pointer does not guarantee succcess unless sensor\+\_\+buf contains correct data 
+\end{DoxyReturn}

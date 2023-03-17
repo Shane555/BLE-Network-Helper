@@ -1,0 +1,133 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}BLE-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper 0.1}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Guideline to library usage}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}backend\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Union Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Member Data Documentation}{7}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}prov\_add\_app\_key}{7}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}prov\_add\_net\_key}{7}{subsubsection.4.1.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}prov\_key\_fail}{8}{subsubsection.4.1.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.1.4}prov\_key\_success}{8}{subsubsection.4.1.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.1.5}prov\_mode\_get}{8}{subsubsection.4.1.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.1.6}prov\_mode\_node\_reset}{8}{subsubsection.4.1.1.6}%
+\contentsline {subsubsection}{\numberline {4.1.1.7}prov\_mode\_set}{8}{subsubsection.4.1.1.7}%
+\contentsline {subsubsection}{\numberline {4.1.1.8}prov\_mode\_status}{8}{subsubsection.4.1.1.8}%
+\contentsline {section}{\numberline {4.2}cfg\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}state\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Union Reference}{8}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{9}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Member Data Documentation}{9}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}get\_state}{9}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}set\_state}{9}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}status\_state}{9}{subsubsection.4.2.2.3}%
+\contentsline {section}{\numberline {4.3}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}add\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}appkey\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{9}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Member Data Documentation}{10}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}app\_idx}{10}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}net\_idx}{10}{subsubsection.4.3.1.2}%
+\contentsline {section}{\numberline {4.4}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}add\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}netkey\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{10}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Member Data Documentation}{10}{subsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.1}net\_idx}{10}{subsubsection.4.4.1.1}%
+\contentsline {section}{\numberline {4.5}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}fail\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{10}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Member Data Documentation}{11}{subsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.1}opcode}{11}{subsubsection.4.5.1.1}%
+\contentsline {section}{\numberline {4.6}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}success\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{11}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Member Data Documentation}{11}{subsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.1}app\_idx}{11}{subsubsection.4.6.1.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.2}net\_idx}{11}{subsubsection.4.6.1.2}%
+\contentsline {subsubsection}{\numberline {4.6.1.3}opcode}{12}{subsubsection.4.6.1.3}%
+\contentsline {section}{\numberline {4.7}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mode\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}get\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{12}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Member Data Documentation}{12}{subsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.1}prov\_payload}{12}{subsubsection.4.7.1.1}%
+\contentsline {section}{\numberline {4.8}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mode\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}node\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{12}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Member Data Documentation}{12}{subsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.1.1}prov\_payload}{13}{subsubsection.4.8.1.1}%
+\contentsline {section}{\numberline {4.9}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mode\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{13}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Member Data Documentation}{13}{subsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.1.1}prov\_payload}{13}{subsubsection.4.9.1.1}%
+\contentsline {section}{\numberline {4.10}prov\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mode\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}status\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{13}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Member Data Documentation}{13}{subsection.4.10.1}%
+\contentsline {subsubsection}{\numberline {4.10.1.1}prov\_is\_true}{13}{subsubsection.4.10.1.1}%
+\contentsline {chapter}{\numberline {5}File Documentation}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}includes/my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}crc.h File Reference}{15}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Function Documentation}{15}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}CRCCCITT()}{15}{subsubsection.5.1.1.1}%
+\contentsline {section}{\numberline {5.2}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}crc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{16}{section.5.2}%
+\contentsline {section}{\numberline {5.3}includes/my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}def.h File Reference}{16}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Macro Definition Documentation}{17}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}BACKEND\_PROV\_DATA\_PAYLOAD\_BYTES}{17}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}BACKEND\_PROV\_OP\_3}{17}{subsubsection.5.3.1.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}BLE\_NET\_CONFIG\_PAYLOAD\_BYTES}{18}{subsubsection.5.3.1.3}%
+\contentsline {subsubsection}{\numberline {5.3.1.4}CID\_ESP}{18}{subsubsection.5.3.1.4}%
+\contentsline {subsubsection}{\numberline {5.3.1.5}CUSTOM\_MODELS\_DEF}{18}{subsubsection.5.3.1.5}%
+\contentsline {subsubsection}{\numberline {5.3.1.6}ESP\_BLE\_MESH\_VND\_MODEL\_ID\_CLIENT}{18}{subsubsection.5.3.1.6}%
+\contentsline {subsubsection}{\numberline {5.3.1.7}ESP\_BLE\_MESH\_VND\_MODEL\_ID\_SERVER}{18}{subsubsection.5.3.1.7}%
+\contentsline {subsubsection}{\numberline {5.3.1.8}ESP\_BLE\_MESH\_VND\_MODEL\_OP\_DUMMY\_SET}{18}{subsubsection.5.3.1.8}%
+\contentsline {subsubsection}{\numberline {5.3.1.9}ESP\_BLE\_MESH\_VND\_MODEL\_OP\_GET}{18}{subsubsection.5.3.1.9}%
+\contentsline {subsubsection}{\numberline {5.3.1.10}ESP\_BLE\_MESH\_VND\_MODEL\_OP\_INTR\_STATUS}{18}{subsubsection.5.3.1.10}%
+\contentsline {subsubsection}{\numberline {5.3.1.11}ESP\_BLE\_MESH\_VND\_MODEL\_OP\_SET}{19}{subsubsection.5.3.1.11}%
+\contentsline {subsubsection}{\numberline {5.3.1.12}ESP\_BLE\_MESH\_VND\_MODEL\_OP\_SET\_UNACK}{19}{subsubsection.5.3.1.12}%
+\contentsline {subsubsection}{\numberline {5.3.1.13}ESP\_BLE\_MESH\_VND\_MODEL\_OP\_STATUS}{19}{subsubsection.5.3.1.13}%
+\contentsline {subsubsection}{\numberline {5.3.1.14}MESH\_CLIENT\_TIMEOUT}{19}{subsubsection.5.3.1.14}%
+\contentsline {subsubsection}{\numberline {5.3.1.15}MSG\_A\_BACKEND\_PROV\_BYTES}{19}{subsubsection.5.3.1.15}%
+\contentsline {subsubsection}{\numberline {5.3.1.16}MSG\_A\_BYTES}{19}{subsubsection.5.3.1.16}%
+\contentsline {subsubsection}{\numberline {5.3.1.17}MSG\_A\_CONFIG\_BYTES}{19}{subsubsection.5.3.1.17}%
+\contentsline {subsubsection}{\numberline {5.3.1.18}MSG\_A\_NON\_NET\_PAYLOAD}{19}{subsubsection.5.3.1.18}%
+\contentsline {subsubsection}{\numberline {5.3.1.19}MSG\_C\_BYTES}{20}{subsubsection.5.3.1.19}%
+\contentsline {subsubsection}{\numberline {5.3.1.20}MSG\_ROLE}{20}{subsubsection.5.3.1.20}%
+\contentsline {subsubsection}{\numberline {5.3.1.21}MSG\_SEND\_REL}{20}{subsubsection.5.3.1.21}%
+\contentsline {subsubsection}{\numberline {5.3.1.22}MSG\_SEND\_TTL}{20}{subsubsection.5.3.1.22}%
+\contentsline {subsubsection}{\numberline {5.3.1.23}MSG\_TIMEOUT}{20}{subsubsection.5.3.1.23}%
+\contentsline {subsubsection}{\numberline {5.3.1.24}PROV\_ADD\_APPKEY}{20}{subsubsection.5.3.1.24}%
+\contentsline {subsubsection}{\numberline {5.3.1.25}PROV\_ADD\_NETKEY}{20}{subsubsection.5.3.1.25}%
+\contentsline {subsubsection}{\numberline {5.3.1.26}PROV\_KEY\_FAIL}{20}{subsubsection.5.3.1.26}%
+\contentsline {subsubsection}{\numberline {5.3.1.27}PROV\_KEY\_SUCCESS}{21}{subsubsection.5.3.1.27}%
+\contentsline {subsubsection}{\numberline {5.3.1.28}PROV\_MODE\_GET}{21}{subsubsection.5.3.1.28}%
+\contentsline {subsubsection}{\numberline {5.3.1.29}PROV\_MODE\_NODE\_RESET}{21}{subsubsection.5.3.1.29}%
+\contentsline {subsubsection}{\numberline {5.3.1.30}PROV\_MODE\_SET}{21}{subsubsection.5.3.1.30}%
+\contentsline {subsubsection}{\numberline {5.3.1.31}PROV\_MODE\_STATUS}{21}{subsubsection.5.3.1.31}%
+\contentsline {subsubsection}{\numberline {5.3.1.32}PROV\_NODE\_INFO}{21}{subsubsection.5.3.1.32}%
+\contentsline {subsubsection}{\numberline {5.3.1.33}SENSOR\_PAYLOAD\_BYTES}{21}{subsubsection.5.3.1.33}%
+\contentsline {subsection}{\numberline {5.3.2}Function Documentation}{21}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}\_\_attribute\_\_()}{22}{subsubsection.5.3.2.1}%
+\contentsline {subsection}{\numberline {5.3.3}Variable Documentation}{22}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}model\_sensor\_data\_t}{22}{subsubsection.5.3.3.1}%
+\contentsline {section}{\numberline {5.4}my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}custom\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}def.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{22}{section.5.4}%
+\contentsline {section}{\numberline {5.5}includes/network\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}msg\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}struct.h File Reference}{23}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{24}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Macro Definition Documentation}{25}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}NET\_MSG\_STRUCT}{25}{subsubsection.5.5.2.1}%
+\contentsline {subsection}{\numberline {5.5.3}Function Documentation}{25}{subsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.1}extract\_addr()}{25}{subsubsection.5.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.5.3.2}extract\_backend\_prov\_data\_msgA()}{25}{subsubsection.5.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.5.3.3}extract\_bt\_data\_msgA()}{26}{subsubsection.5.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.4}extract\_node\_data\_msgA()}{26}{subsubsection.5.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.5.3.5}extract\_opcode()}{27}{subsubsection.5.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.5.3.6}extract\_sensor\_data\_msgA()}{27}{subsubsection.5.5.3.6}%
+\contentsline {subsubsection}{\numberline {5.5.3.7}extract\_sensor\_data\_msgC()}{27}{subsubsection.5.5.3.7}%
+\contentsline {subsubsection}{\numberline {5.5.3.8}free\_node\_data()}{28}{subsubsection.5.5.3.8}%
+\contentsline {subsubsection}{\numberline {5.5.3.9}set\_backend\_prov\_data\_msgA()}{28}{subsubsection.5.5.3.9}%
+\contentsline {subsubsection}{\numberline {5.5.3.10}set\_bt\_data\_msgA()}{28}{subsubsection.5.5.3.10}%
+\contentsline {subsubsection}{\numberline {5.5.3.11}set\_sensor\_data\_msgA()}{29}{subsubsection.5.5.3.11}%
+\contentsline {subsubsection}{\numberline {5.5.3.12}set\_sensor\_data\_msgC()}{29}{subsubsection.5.5.3.12}%
+\contentsline {section}{\numberline {5.6}network\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}msg\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}struct.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{30}{section.5.6}%
+\contentsline {section}{\numberline {5.7}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{30}{section.5.7}%
+\contentsline {section}{\numberline {5.8}srcs/my\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}crc.c File Reference}{30}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Function Documentation}{31}{subsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.1.1}CRCCCITT()}{31}{subsubsection.5.8.1.1}%
+\contentsline {section}{\numberline {5.9}srcs/network\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}msg\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}struct.c File Reference}{31}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Function Documentation}{32}{subsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.1}extract\_addr()}{32}{subsubsection.5.9.1.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.2}extract\_backend\_prov\_data\_msgA()}{33}{subsubsection.5.9.1.2}%
+\contentsline {subsubsection}{\numberline {5.9.1.3}extract\_bt\_data\_msgA()}{33}{subsubsection.5.9.1.3}%
+\contentsline {subsubsection}{\numberline {5.9.1.4}extract\_node\_data\_msgA()}{33}{subsubsection.5.9.1.4}%
+\contentsline {subsubsection}{\numberline {5.9.1.5}extract\_opcode()}{34}{subsubsection.5.9.1.5}%
+\contentsline {subsubsection}{\numberline {5.9.1.6}extract\_sensor\_data\_msgA()}{34}{subsubsection.5.9.1.6}%
+\contentsline {subsubsection}{\numberline {5.9.1.7}extract\_sensor\_data\_msgC()}{35}{subsubsection.5.9.1.7}%
+\contentsline {subsubsection}{\numberline {5.9.1.8}free\_node\_data()}{35}{subsubsection.5.9.1.8}%
+\contentsline {subsubsection}{\numberline {5.9.1.9}set\_backend\_prov\_data\_msgA()}{35}{subsubsection.5.9.1.9}%
+\contentsline {subsubsection}{\numberline {5.9.1.10}set\_bt\_data\_msgA()}{36}{subsubsection.5.9.1.10}%
+\contentsline {subsubsection}{\numberline {5.9.1.11}set\_sensor\_data\_msgA()}{36}{subsubsection.5.9.1.11}%
+\contentsline {subsubsection}{\numberline {5.9.1.12}set\_sensor\_data\_msgC()}{37}{subsubsection.5.9.1.12}%
+\contentsline {chapter}{Index}{39}{section*.21}%

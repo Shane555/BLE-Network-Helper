@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>network_msg_struct: network_msg_struct.h File Reference</title>
+<title>BLE Network Helper: includes/network_msg_struct.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">network_msg_struct
+   <div id="projectname">BLE Network Helper
    </div>
   </td>
  </tr>
@@ -67,6 +67,10 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -81,7 +85,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;esp_ble_mesh_defs.h&quot;</code><br />
 <code>#include &quot;esp_ble_mesh_config_model_api.h&quot;</code><br />
-<code>#include &quot;my_custom_models_def.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="my__custom__models__def_8h_source.html">my_custom_models_def.h</a>&quot;</code><br />
 </div>
 <p><a href="network__msg__struct_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -91,6 +95,11 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a BLE Mesh configuration state with parameters defined according to Mesh Specifications  <a href="unioncfg__state__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aa5ca797a1122460c6104e64eb30e6011"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#aa5ca797a1122460c6104e64eb30e6011">NET_MSG_STRUCT</a></td></tr>
+<tr class="separator:aa5ca797a1122460c6104e64eb30e6011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a13339b6abe2cbc92992726bd2a303d52"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a13339b6abe2cbc92992726bd2a303d52">extract_opcode</a> (uint8_t *buf)</td></tr>
@@ -99,22 +108,34 @@ Functions</h2></td></tr>
 <tr class="memitem:a1cf6d66b30d53e988eb49735945e3456"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a1cf6d66b30d53e988eb49735945e3456">extract_addr</a> (uint8_t *buf)</td></tr>
 <tr class="memdesc:a1cf6d66b30d53e988eb49735945e3456"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract address segment from message A.  <br /></td></tr>
 <tr class="separator:a1cf6d66b30d53e988eb49735945e3456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18132a5c4d0c74e342b86d788143b30c"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a18132a5c4d0c74e342b86d788143b30c">extract_sensor_data_msgA</a> (uint8_t *buf, model_sensor_data_t *sensor_buf)</td></tr>
+<tr class="memitem:a18132a5c4d0c74e342b86d788143b30c"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a18132a5c4d0c74e342b86d788143b30c">extract_sensor_data_msgA</a> (uint8_t *buf, <a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *sensor_buf)</td></tr>
 <tr class="memdesc:a18132a5c4d0c74e342b86d788143b30c"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract sensor data payload from buf to store in sensor_buf  <br /></td></tr>
 <tr class="separator:a18132a5c4d0c74e342b86d788143b30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb95e34affeff57b5953f75c96bda3f1"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#abb95e34affeff57b5953f75c96bda3f1">extract_bt_data_msgA</a> (uint8_t *buf, <a class="el" href="unioncfg__state__t.html">cfg_state_t</a> *state)</td></tr>
 <tr class="memdesc:abb95e34affeff57b5953f75c96bda3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract bluetooth config data payload from buf to store in <a class="el" href="unioncfg__state__t.html" title="a BLE Mesh configuration state with parameters defined according to Mesh Specifications">cfg_state_t</a> state  <br /></td></tr>
 <tr class="separator:abb95e34affeff57b5953f75c96bda3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a673d16b99488dd67a167061544ecfe5c"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a673d16b99488dd67a167061544ecfe5c">set_sensor_data_msgA</a> (uint32_t opcode, uint16_t addr, model_sensor_data_t *sensor_buf)</td></tr>
+<tr class="memitem:a5756a1dc83428825ef7bd4f80ba6c0f3"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a5756a1dc83428825ef7bd4f80ba6c0f3">extract_backend_prov_data_msgA</a> (uint8_t *buf, <a class="el" href="unionbackend__prov__data__t.html">backend_prov_data_t</a> *prov_data)</td></tr>
+<tr class="memdesc:a5756a1dc83428825ef7bd4f80ba6c0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract backend prov data payload from buf to store in <a class="el" href="unionbackend__prov__data__t.html">backend_prov_data_t</a> prov_data  <br /></td></tr>
+<tr class="separator:a5756a1dc83428825ef7bd4f80ba6c0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd62914a71b072fdee87f3862b9ff2b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#aadd62914a71b072fdee87f3862b9ff2b">extract_node_data_msgA</a> (uint8_t *buf, esp_ble_mesh_node_t *node_info)</td></tr>
+<tr class="memdesc:aadd62914a71b072fdee87f3862b9ff2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract node information when msgA of PROV_NODE_INFO opcode is sent to backend. Note buf is dynamically allocated  <br /></td></tr>
+<tr class="separator:aadd62914a71b072fdee87f3862b9ff2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93d0e70ca1f87f957a65aa999daacf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#ae93d0e70ca1f87f957a65aa999daacf5">free_node_data</a> (esp_ble_mesh_node_t *node_info)</td></tr>
+<tr class="memdesc:ae93d0e70ca1f87f957a65aa999daacf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">free dynamically allocated pointer esp_ble_mesh_node_t* node_info after "extract_back_end_prov_data_msgA()"  <br /></td></tr>
+<tr class="separator:ae93d0e70ca1f87f957a65aa999daacf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673d16b99488dd67a167061544ecfe5c"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a673d16b99488dd67a167061544ecfe5c">set_sensor_data_msgA</a> (uint32_t opcode, uint16_t addr, <a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *sensor_buf)</td></tr>
 <tr class="memdesc:a673d16b99488dd67a167061544ecfe5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the buffer containing sensor message A , which includes generating and setting the crc in message A.  <br /></td></tr>
 <tr class="separator:a673d16b99488dd67a167061544ecfe5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab84719454758c0f7bf6293ec86cac369"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#ab84719454758c0f7bf6293ec86cac369">set_bt_data_msgA</a> (uint32_t opcode, uint16_t addr, <a class="el" href="unioncfg__state__t.html">cfg_state_t</a> *state)</td></tr>
 <tr class="memdesc:ab84719454758c0f7bf6293ec86cac369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the buffer containing bt message A , which includes generating and setting the crc in message A.  <br /></td></tr>
 <tr class="separator:ab84719454758c0f7bf6293ec86cac369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed51623ed07781a7b6c05e768f919426"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#aed51623ed07781a7b6c05e768f919426">extract_sensor_data_msgC</a> (uint8_t *buf, model_sensor_data_t *sensor_buf)</td></tr>
+<tr class="memitem:a6e7cfae13eae875e270f1c966b517425"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#a6e7cfae13eae875e270f1c966b517425">set_backend_prov_data_msgA</a> (uint32_t opcode, <a class="el" href="unionbackend__prov__data__t.html">backend_prov_data_t</a> *prov_data)</td></tr>
+<tr class="memdesc:a6e7cfae13eae875e270f1c966b517425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the buffer containing backend prov message A , which includes generating and setting the crc in message A.  <br /></td></tr>
+<tr class="separator:a6e7cfae13eae875e270f1c966b517425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed51623ed07781a7b6c05e768f919426"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#aed51623ed07781a7b6c05e768f919426">extract_sensor_data_msgC</a> (uint8_t *buf, <a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *sensor_buf)</td></tr>
 <tr class="memdesc:aed51623ed07781a7b6c05e768f919426"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract sensor data payload from buf to store in sensor_buf  <br /></td></tr>
 <tr class="separator:aed51623ed07781a7b6c05e768f919426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a879a933d3b3bededfa1583d519a92"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#ad5a879a933d3b3bededfa1583d519a92">set_sensor_data_msgC</a> (uint32_t opcode, model_sensor_data_t *sensor_buf)</td></tr>
+<tr class="memitem:ad5a879a933d3b3bededfa1583d519a92"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="network__msg__struct_8h.html#ad5a879a933d3b3bededfa1583d519a92">set_sensor_data_msgC</a> (uint32_t opcode, <a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *sensor_buf)</td></tr>
 <tr class="memdesc:ad5a879a933d3b3bededfa1583d519a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the buffer containing message C , which includes generating and setting the crc in message C.  <br /></td></tr>
 <tr class="separator:ad5a879a933d3b3bededfa1583d519a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -124,7 +145,22 @@ Functions</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-02-22</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aa5ca797a1122460c6104e64eb30e6011" name="aa5ca797a1122460c6104e64eb30e6011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ca797a1122460c6104e64eb30e6011">&#9670;&#160;</a></span>NET_MSG_STRUCT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NET_MSG_STRUCT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a1cf6d66b30d53e988eb49735945e3456" name="a1cf6d66b30d53e988eb49735945e3456"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1cf6d66b30d53e988eb49735945e3456">&#9670;&#160;</a></span>extract_addr()</h2>
 
@@ -149,6 +185,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t unicast addr or group addr, 0 if fail </dd></dl>
+
+</div>
+</div>
+<a id="a5756a1dc83428825ef7bd4f80ba6c0f3" name="a5756a1dc83428825ef7bd4f80ba6c0f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5756a1dc83428825ef7bd4f80ba6c0f3">&#9670;&#160;</a></span>extract_backend_prov_data_msgA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t extract_backend_prov_data_msgA </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionbackend__prov__data__t.html">backend_prov_data_t</a> *&#160;</td>
+          <td class="paramname"><em>prov_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>extract backend prov data payload from buf to store in <a class="el" href="unionbackend__prov__data__t.html">backend_prov_data_t</a> prov_data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>buf should have enough data allocated and user should ensure it contains message A backend prov msg format </td></tr>
+    <tr><td class="paramname">prov_data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns 0 if successful, -1 if fail. Note: returning 0 does not guarantee succcess unless buf contains correct data </dd></dl>
 
 </div>
 </div>
@@ -187,6 +261,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>returns 0 if successful, -1 if fail. Note: returning 0 does not guarantee succcess unless buf contains correct data </dd></dl>
+
+</div>
+</div>
+<a id="aadd62914a71b072fdee87f3862b9ff2b" name="aadd62914a71b072fdee87f3862b9ff2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd62914a71b072fdee87f3862b9ff2b">&#9670;&#160;</a></span>extract_node_data_msgA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t extract_node_data_msgA </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">esp_ble_mesh_node_t *&#160;</td>
+          <td class="paramname"><em>node_info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>extract node information when msgA of PROV_NODE_INFO opcode is sent to backend. Note buf is dynamically allocated </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>msgA format for PROV_NODE_INFO special opcode </td></tr>
+    <tr><td class="paramname">node_info</td><td>pointer that will be initialised to node information after function call </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of nodes provisioned, -1 if fail </dd></dl>
 
 </div>
 </div>
@@ -232,7 +344,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">model_sensor_data_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *&#160;</td>
           <td class="paramname"><em>sensor_buf</em>&#160;</td>
         </tr>
         <tr>
@@ -270,7 +382,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">model_sensor_data_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *&#160;</td>
           <td class="paramname"><em>sensor_buf</em>&#160;</td>
         </tr>
         <tr>
@@ -290,6 +402,70 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>returns 0 if successful, -1 if fail. Note: returning 0 does not guarantee succcess unless buf contains correct data </dd></dl>
+
+</div>
+</div>
+<a id="ae93d0e70ca1f87f957a65aa999daacf5" name="ae93d0e70ca1f87f957a65aa999daacf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93d0e70ca1f87f957a65aa999daacf5">&#9670;&#160;</a></span>free_node_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_node_data </td>
+          <td>(</td>
+          <td class="paramtype">esp_ble_mesh_node_t *&#160;</td>
+          <td class="paramname"><em>node_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>free dynamically allocated pointer esp_ble_mesh_node_t* node_info after "extract_back_end_prov_data_msgA()" </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_info</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6e7cfae13eae875e270f1c966b517425" name="a6e7cfae13eae875e270f1c966b517425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7cfae13eae875e270f1c966b517425">&#9670;&#160;</a></span>set_backend_prov_data_msgA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * set_backend_prov_data_msgA </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionbackend__prov__data__t.html">backend_prov_data_t</a> *&#160;</td>
+          <td class="paramname"><em>prov_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the buffer containing backend prov message A , which includes generating and setting the crc in message A. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td>opcode of command </td></tr>
+    <tr><td class="paramname">prov_data</td><td>valid backend prov data pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns pointer to buffer(static define, not thread-safe) containing message A if successful, NULL if fail. Note: returning valid pointer does not guarantee succcess unless prov_data contains correct data </dd></dl>
 
 </div>
 </div>
@@ -359,7 +535,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">model_sensor_data_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *&#160;</td>
           <td class="paramname"><em>sensor_buf</em>&#160;</td>
         </tr>
         <tr>
@@ -398,7 +574,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">model_sensor_data_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="my__custom__models__def_8h.html#a04fa62189a131d2632415766076756be">model_sensor_data_t</a> *&#160;</td>
           <td class="paramname"><em>sensor_buf</em>&#160;</td>
         </tr>
         <tr>
@@ -413,6 +589,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">opcode</td><td>opcode of command </td></tr>
+    <tr><td class="paramname">addr</td><td>destination address </td></tr>
     <tr><td class="paramname">sensor_buf</td><td>valid sensor data pointer </td></tr>
   </table>
   </dd>
