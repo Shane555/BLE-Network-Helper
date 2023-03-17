@@ -3,7 +3,7 @@ BLE Mesh Helper APIs for packing and unpacking BLE mesh messages
 
 ## Guideline to library usage
 1. Download the library 
-2. Build from source, use your custom build system or Cmake(Version 3.1.6 minimum) 
+2. Build from source, use your custom build system(for embedded compiler toolchain) or use Cmake(Version 3.1.6 minimum) for Linux/Windows 
   
     if using Cmake
     1. go to BLE-Network-Helper dir and make a 'build' directory
