@@ -839,6 +839,78 @@ typedef struct {
     uint16_t comp_length;  /*!< Length of Composition Data */
     uint8_t *comp_data;    /*!< Value of Composition Data */
 } __attribute__((packed)) esp_ble_mesh_node_t;
+
+/** @def    ESP_BLE_MESH_TRANSMIT
+ *
+ *  @brief  Encode transmission count & interval steps.
+ *
+ *  @note   For example, ESP_BLE_MESH_TRANSMIT(2, 20) means that the message
+ *          will be sent about 90ms(count is 3, step is 1, interval is 30 ms
+ *          which includes 10ms of advertising interval random delay).
+ *
+ *  @param  count   Number of retransmissions (first transmission is excluded).
+ *  @param  int_ms  Interval steps in milliseconds. Must be greater than 0
+ *                  and a multiple of 10.
+ *
+ *  @return BLE Mesh transmit value that can be used e.g. for the default
+ *          values of the Configuration Model data.
+ */
+#define ESP_BLE_MESH_TRANSMIT(count, int_ms) ((count) | (((int_ms / 10) - 1) << 3))
+
+/** @def ESP_BLE_MESH_GET_TRANSMIT_COUNT
+ *
+ *  @brief Decode transmit count from a transmit value.
+ *
+ *  @param transmit Encoded transmit count & interval value.
+ *
+ *  @return Transmission count (actual transmissions equal to N + 1).
+ */
+#define ESP_BLE_MESH_GET_TRANSMIT_COUNT(transmit) (((transmit) & (uint8_t)BIT_MASK(3)))
+
+/** @def ESP_BLE_MESH_GET_TRANSMIT_INTERVAL
+ *
+ *  @brief Decode transmit interval from a transmit value.
+ *
+ *  @param transmit Encoded transmit count & interval value.
+ *
+ *  @return Transmission interval in milliseconds.
+ */
+#define ESP_BLE_MESH_GET_TRANSMIT_INTERVAL(transmit) ((((transmit) >> 3) + 1) * 10)
+
+/** @def ESP_BLE_MESH_PUBLISH_TRANSMIT
+ *
+ *  @brief Encode Publish Retransmit count & interval steps.
+ *
+ *  @param count   Number of retransmissions (first transmission is excluded).
+ *  @param int_ms  Interval steps in milliseconds. Must be greater than 0
+ *                 and a multiple of 50.
+ *
+ *  @return BLE Mesh transmit value that can be used e.g. for the default
+ *          values of the Configuration Model data.
+ */
+#define ESP_BLE_MESH_PUBLISH_TRANSMIT(count, int_ms) ESP_BLE_MESH_TRANSMIT(count, (int_ms) / 5)
+
+/** @def ESP_BLE_MESH_GET_PUBLISH_TRANSMIT_COUNT
+ *
+ *  @brief Decode Publish Retransmit count from a given value.
+ *
+ *  @param transmit Encoded Publish Retransmit count & interval value.
+ *
+ *  @return Retransmission count (actual transmissions equal to N + 1).
+ */
+#define ESP_BLE_MESH_GET_PUBLISH_TRANSMIT_COUNT(transmit) ESP_BLE_MESH_GET_TRANSMIT_COUNT(transmit)
+
+/** @def ESP_BLE_MESH_GET_PUBLISH_TRANSMIT_INTERVAL
+ *
+ *  @brief Decode Publish Retransmit interval from a given value.
+ *
+ *  @param transmit Encoded Publish Retransmit count & interval value.
+ *
+ *  @return Transmission interval in milliseconds.
+ */
+#define ESP_BLE_MESH_GET_PUBLISH_TRANSMIT_INTERVAL(transmit) ((((transmit) >> 3) + 1) * 50)
+
+
 #ifdef __cplusplus
 }
 #endif
