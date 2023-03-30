@@ -1,8 +1,8 @@
 #include "network_msg_struct.h"
 #include <stdint.h>
-#include <stddef.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <stddef.h>
 #include <string.h>
 #include <endian.h>
 #include "my_crc.h"
@@ -78,6 +78,7 @@ void free_node_data(esp_ble_mesh_node_t *node_info)
 uint8_t *set_sensor_data_msgA(uint32_t opcode, uint16_t addr, model_sensor_data_t *sensor_buf)
 {
   static uint8_t buf[MSG_A_BYTES] = {0};
+  memset(buf, 0, MSG_A_BYTES);
   if (sensor_buf == NULL)
     return NULL;
   // little endian formatting
@@ -94,6 +95,7 @@ uint8_t *set_bt_data_msgA(uint32_t opcode, uint16_t addr, cfg_state_t *state)
 {
   static_assert(sizeof(cfg_state_t) == BLE_NET_CONFIG_PAYLOAD_BYTES,"platform must treat cfg_state_t as 28 bytes");  //sanity check for portability issues
   static uint8_t buf[MSG_A_CONFIG_BYTES] = {0};
+  memset(buf, 0, MSG_A_CONFIG_BYTES);
   if (state == NULL)
     return NULL;
   // little endian formatting
@@ -109,6 +111,7 @@ uint8_t *set_bt_data_msgA(uint32_t opcode, uint16_t addr, cfg_state_t *state)
 uint8_t *set_backend_prov_data_msgA(uint32_t opcode, backend_prov_data_t *prov_data)
 {
   static uint8_t buf[MSG_A_BACKEND_PROV_BYTES];
+  memset(buf, 0, MSG_A_BACKEND_PROV_BYTES);
   if (prov_data == NULL)
     return NULL;
   // little endian formatting
@@ -131,6 +134,7 @@ int32_t extract_sensor_data_msgC(uint8_t *buf, model_sensor_data_t *sensor_buf)
 uint8_t *set_sensor_data_msgC(uint32_t opcode, model_sensor_data_t *sensor_buf)
 {
   static uint8_t buf[MSG_C_BYTES] = {0};
+  memset(buf, 0, MSG_C_BYTES);
   if (sensor_buf == NULL)
     return NULL;
   // little endian formatting
