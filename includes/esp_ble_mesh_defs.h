@@ -114,7 +114,7 @@ typedef uint8_t esp_ble_mesh_octet8_t[ESP_BLE_MESH_OCTET8_LEN];
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_PROV_COMPLETE_EVT
      */
-    struct ble_mesh_provisioner_prov_comp_param {
+    extern struct ble_mesh_provisioner_prov_comp_param {
         uint16_t node_idx;                      /*!< Index of the provisioned device */
         esp_ble_mesh_octet16_t device_uuid;     /*!< Device UUID of the provisioned device */
         uint16_t unicast_addr;                  /*!< Primary address of the provisioned device */
@@ -124,74 +124,74 @@ typedef uint8_t esp_ble_mesh_octet8_t[ESP_BLE_MESH_OCTET8_LEN];
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT
      */
-    struct ble_mesh_provisioner_add_unprov_dev_comp_param {
+    extern struct ble_mesh_provisioner_add_unprov_dev_comp_param {
         int err_code;                           /*!< Indicate the result of adding device into queue by the Provisioner */
     } provisioner_add_unprov_dev_comp;          /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_ADD_UNPROV_DEV_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_PROV_DEV_WITH_ADDR_COMP_EVT
      */
-    struct ble_mesh_provisioner_prov_dev_with_addr_comp_param {
+    extern struct ble_mesh_provisioner_prov_dev_with_addr_comp_param {
         int err_code;                           /*!< Indicate the result of Provisioner starting to provision a device */
     } provisioner_prov_dev_with_addr_comp;      /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_PROV_DEV_WITH_ADDR_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_DELETE_DEV_COMP_EVT
      */
-    struct ble_mesh_provisioner_delete_dev_comp_param {
+    extern struct ble_mesh_provisioner_delete_dev_comp_param {
         int err_code;                           /*!< Indicate the result of deleting device by the Provisioner */
     } provisioner_delete_dev_comp;              /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_DELETE_DEV_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_SET_DEV_UUID_MATCH_COMP_EVT
      */
-    struct ble_mesh_provisioner_set_dev_uuid_match_comp_param {
+    extern struct ble_mesh_provisioner_set_dev_uuid_match_comp_param {
         int err_code;                           /*!< Indicate the result of setting Device UUID match value by the Provisioner */
     } provisioner_set_dev_uuid_match_comp;      /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_SET_DEV_UUID_MATCH_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_SET_PROV_DATA_INFO_COMP_EVT
      */
-    struct ble_mesh_provisioner_set_prov_data_info_comp_param {
+    extern struct ble_mesh_provisioner_set_prov_data_info_comp_param {
         int err_code;                           /*!< Indicate the result of setting provisioning info by the Provisioner */
     } provisioner_set_prov_data_info_comp;      /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_SET_PROV_DATA_INFO_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_SET_STATIC_OOB_VALUE_COMP_EVT
      */
-    struct ble_mesh_provisioner_set_static_oob_val_comp_param {
+    extern struct ble_mesh_provisioner_set_static_oob_val_comp_param {
         int err_code;                           /*!< Indicate the result of setting static oob value by the Provisioner */
     } provisioner_set_static_oob_val_comp;      /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_SET_STATIC_OOB_VALUE_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_SET_PRIMARY_ELEM_ADDR_COMP_EVT
      */
-    struct ble_mesh_provisioner_set_primary_elem_addr_comp_param {
+    extern struct ble_mesh_provisioner_set_primary_elem_addr_comp_param {
         int err_code;                           /*!< Indicate the result of setting unicast address of primary element by the Provisioner */
     } provisioner_set_primary_elem_addr_comp;   /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_SET_PRIMARY_ELEM_ADDR_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_PROV_READ_OOB_PUB_KEY_COMP_EVT
      */
-    struct ble_mesh_provisioner_prov_read_oob_pub_key_comp_param {
+    extern struct ble_mesh_provisioner_prov_read_oob_pub_key_comp_param {
         int err_code;                           /*!< Indicate the result of setting OOB Public Key by the Provisioner */
     } provisioner_prov_read_oob_pub_key_comp;   /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_PROV_READ_OOB_PUB_KEY_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_PROV_INPUT_NUMBER_COMP_EVT
      */
-    struct ble_mesh_provisioner_prov_input_num_comp_param {
+    extern struct ble_mesh_provisioner_prov_input_num_comp_param {
         int err_code;                           /*!< Indicate the result of inputting number by the Provisioner */
     } provisioner_prov_input_num_comp;          /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_PROV_INPUT_NUMBER_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_PROV_INPUT_STRING_COMP_EVT
      */
-    struct ble_mesh_provisioner_prov_input_str_comp_param {
+    extern struct ble_mesh_provisioner_prov_input_str_comp_param {
         int err_code;                           /*!< Indicate the result of inputting string by the Provisioner */
     } provisioner_prov_input_str_comp;          /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_PROV_INPUT_STRING_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT
      */
-    struct ble_mesh_provisioner_set_node_name_comp_param {
+    extern struct ble_mesh_provisioner_set_node_name_comp_param {
         int err_code;                           /*!< Indicate the result of setting provisioned device name by the Provisioner */
         uint16_t node_index;                    /*!< Index of the provisioned device */
     } provisioner_set_node_name_comp;           /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_SET_NODE_NAME_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_ADD_LOCAL_APP_KEY_COMP_EVT
      */
-    struct ble_mesh_provisioner_add_local_app_key_comp_param {
+    extern struct ble_mesh_provisioner_add_local_app_key_comp_param {
         int err_code;                           /*!< Indicate the result of adding local AppKey by the Provisioner */
         uint16_t net_idx;                       /*!< NetKey Index */
         uint16_t app_idx;                       /*!< AppKey Index */
@@ -199,7 +199,7 @@ typedef uint8_t esp_ble_mesh_octet8_t[ESP_BLE_MESH_OCTET8_LEN];
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_UPDATE_LOCAL_APP_KEY_COMP_EVT
      */
-    struct ble_mesh_provisioner_update_local_app_key_comp_param {
+    extern struct ble_mesh_provisioner_update_local_app_key_comp_param {
         int err_code;                           /*!< Indicate the result of updating local AppKey by the Provisioner */
         uint16_t net_idx;                       /*!< NetKey Index */
         uint16_t app_idx;                       /*!< AppKey Index */
@@ -207,7 +207,7 @@ typedef uint8_t esp_ble_mesh_octet8_t[ESP_BLE_MESH_OCTET8_LEN];
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_BIND_APP_KEY_TO_MODEL_COMP_EVT
      */
-    struct ble_mesh_provisioner_bind_local_mod_app_comp_param {
+    extern struct ble_mesh_provisioner_bind_local_mod_app_comp_param {
         int err_code;                           /*!< Indicate the result of binding AppKey with model by the Provisioner */
         uint16_t element_addr;                  /*!< Element address */
         uint16_t app_idx;                       /*!< AppKey Index */
@@ -217,56 +217,56 @@ typedef uint8_t esp_ble_mesh_octet8_t[ESP_BLE_MESH_OCTET8_LEN];
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_ADD_LOCAL_NET_KEY_COMP_EVT
      */
-    struct ble_mesh_provisioner_add_local_net_key_comp_param {
+    extern struct ble_mesh_provisioner_add_local_net_key_comp_param {
         int err_code;                           /*!< Indicate the result of adding local NetKey by the Provisioner */
         uint16_t net_idx;                       /*!< NetKey Index */
     } provisioner_add_net_key_comp;             /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_ADD_LOCAL_NET_KEY_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_UPDATE_LOCAL_NET_KEY_COMP_EVT
      */
-    struct ble_mesh_provisioner_update_local_net_key_comp_param {
+    extern struct ble_mesh_provisioner_update_local_net_key_comp_param {
         int err_code;                           /*!< Indicate the result of updating local NetKey by the Provisioner */
         uint16_t net_idx;                       /*!< NetKey Index */
     } provisioner_update_net_key_comp;          /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_UPDATE_LOCAL_NET_KEY_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT
      */
-    struct ble_mesh_provisioner_store_node_comp_data_comp_param {
+    extern struct ble_mesh_provisioner_store_node_comp_data_comp_param {
         int err_code;                           /*!< Indicate the result of storing node composition data by the Provisioner */
         uint16_t addr;                          /*!< Node element address */
     } provisioner_store_node_comp_data_comp;    /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_STORE_NODE_COMP_DATA_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_DELETE_NODE_WITH_UUID_COMP_EVT
      */
-    struct ble_mesh_provisioner_delete_node_with_uuid_comp_param {
+    extern struct ble_mesh_provisioner_delete_node_with_uuid_comp_param {
         int err_code;                           /*!< Indicate the result of deleting node with uuid by the Provisioner */
         uint8_t uuid[16];                       /*!< Node device uuid */
     } provisioner_delete_node_with_uuid_comp;   /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_DELETE_NODE_WITH_UUID_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_DELETE_NODE_WITH_ADDR_COMP_EVT
      */
-    struct ble_mesh_provisioner_delete_node_with_addr_comp_param {
+    extern struct ble_mesh_provisioner_delete_node_with_addr_comp_param {
         int err_code;                           /*!< Indicate the result of deleting node with unicast address by the Provisioner */
         uint16_t unicast_addr;                  /*!< Node unicast address */
     } provisioner_delete_node_with_addr_comp;   /*!< Event parameter of ESP_BLE_MESH_PROVISIONER_DELETE_NODE_WITH_ADDR_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_ENABLE_HEARTBEAT_RECV_COMP_EVT
      */
-    struct {
+    extern struct {
         int err_code;                           /*!< Indicate the result of enabling/disabling to receive heartbeat messages by the Provisioner */
         bool enable;                            /*!< Indicate enabling or disabling receiving heartbeat messages */
     } provisioner_enable_heartbeat_recv_comp;   /*!< Event parameters of ESP_BLE_MESH_PROVISIONER_ENABLE_HEARTBEAT_RECV_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_SET_HEARTBEAT_FILTER_TYPE_COMP_EVT
      */
-    struct {
+    extern struct {
         int err_code;                               /*!< Indicate the result of setting the heartbeat filter type by the Provisioner */
         uint8_t type;                               /*!< Type of the filter used for receiving heartbeat messages */
     } provisioner_set_heartbeat_filter_type_comp;   /*!< Event parameters of ESP_BLE_MESH_PROVISIONER_SET_HEARTBEAT_FILTER_TYPE_COMP_EVT */
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_SET_HEARTBEAT_FILTER_INFO_COMP_EVT
      */
-    struct {
+    extern struct {
         int err_code;                               /*!< Indicate the result of setting the heartbeat filter address by the Provisioner */
         uint8_t  op;                                /*!< Operation (add, remove, clean) */
         uint16_t hb_src;                            /*!< Heartbeat source address */
@@ -275,7 +275,7 @@ typedef uint8_t esp_ble_mesh_octet8_t[ESP_BLE_MESH_OCTET8_LEN];
     /**
      * @brief ESP_BLE_MESH_PROVISIONER_RECV_HEARTBEAT_MESSAGE_EVT
      */
-    struct {
+    extern struct {
         uint16_t hb_src;            /*!< Heartbeat source address */
         uint16_t hb_dst;            /*!< Heartbeat destination address */
         uint8_t  init_ttl;          /*!< Heartbeat InitTTL */

@@ -13,9 +13,6 @@
 #ifndef NET_MSG_STRUCT
 #define NET_MSG_STRUCT
 
-#if defined (__GLIBC__)
-# include <endian.h>
-#endif
 # if (__BYTE_ORDER == __LITTLE_ENDIAN)
 #else
 #error "invalid endianness"
