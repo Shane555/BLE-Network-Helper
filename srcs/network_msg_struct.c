@@ -57,22 +57,24 @@ int32_t extract_backend_prov_data_msgA(uint8_t *buf, backend_prov_data_t *prov_d
   return 0;
 }
 
-int32_t extract_node_data_msgA(uint8_t *buf, esp_ble_mesh_node_t *node_info)
+int32_t extract_all_node_data_msgA(uint8_t *buf, esp_ble_mesh_node_t **node_info)
 {
+  _Static_assert(sizeof(esp_ble_mesh_node_t) == 89,"platform must treat esp_ble_mesh_node_t as 89 bytes");  //sanity check for portability issues
   if (buf == NULL)
     return -1;
   int32_t node_num = 0;
-  node_num = ((*(buf + 5)) << 8) + ((*(buf + 4)) << 0);
-  node_info = malloc(sizeof(esp_ble_mesh_node_t) * node_num);
-  if (node_info == NULL)
+  node_num = ((*(buf + 4)) << 8) + ((*(buf + 3)) << 0); //buffer's 4th and 5th byte is for node_num
+  *node_info = NULL;
+  *node_info = malloc(sizeof(esp_ble_mesh_node_t) * node_num);
+  if (( *node_info) == NULL)
     return -1;
-  memcpy(node_info, buf + 5, sizeof(esp_ble_mesh_node_t) * node_num);
+  memcpy( (*node_info), buf + 5, sizeof(esp_ble_mesh_node_t) * node_num); 
   return node_num;
 }
 
-void free_node_data(esp_ble_mesh_node_t *node_info)
+void free_node_data(esp_ble_mesh_node_t** node_info)
 {
-  free(node_info);
+  free(*node_info);
 }
 
 uint8_t *set_sensor_data_msgA(uint32_t opcode, uint16_t addr, model_sensor_data_t *sensor_buf)

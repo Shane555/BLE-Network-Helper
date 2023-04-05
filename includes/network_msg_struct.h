@@ -84,20 +84,30 @@ int32_t extract_bt_data_msgA(uint8_t* buf, cfg_state_t* state);
 int32_t extract_backend_prov_data_msgA(uint8_t *buf, backend_prov_data_t *prov_data);
 
 /**
- * @brief extract node information when msgA of PROV_NODE_INFO opcode is sent to backend. Note buf is dynamically allocated
+ * @brief extract node information when msgA of PROV_NODE_INFO opcode is sent to backend. Note *node_info is dynamically allocated
  * 
+ * for example:
+ * ```
+ * esp_ble_mesh_node_t* node_information;
+ * int32_t count = extract_all_node_data_msgA(msg_buffer, &node_information);
+ * for (int i = 0; i < count; i++)
+ * {
+ *    (node_information+i)->unicast_addr.... //process some data
+ * }
+ * 
+ * ```
  * @param buf msgA format for PROV_NODE_INFO special opcode
- * @param node_info pointer that will be initialised to node information after function call
- * @return number of nodes provisioned, -1 if fail
+ * @param node_info pointer to pointer that will be initialised to node information after function call, must free after using it
+ * @return number of nodes provisioned, -1 if fail 
  */
-int32_t extract_node_data_msgA(uint8_t *buf, esp_ble_mesh_node_t *node_info);
+int32_t extract_all_node_data_msgA(uint8_t *buf, esp_ble_mesh_node_t **node_info);
 
 /**
- * @brief free dynamically allocated pointer esp_ble_mesh_node_t* node_info after "extract_back_end_prov_data_msgA()"
+ * @brief free dynamically allocated pointer *node_info after "extract_all_node_data_msgA()"
  * 
  * @param node_info 
  */
-void free_node_data(esp_ble_mesh_node_t *node_info);
+void free_node_data(esp_ble_mesh_node_t **node_info);
 
 /**
  * @brief Set the buffer containing sensor message A , which includes generating and setting the crc in message A
