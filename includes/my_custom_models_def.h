@@ -46,8 +46,7 @@
 
 typedef struct __attribute__((packed))
 {
-  uint8_t byte0;
-  uint8_t byte1;
+  uint16_t timer_threshold_sec;
   uint8_t byte2;
   uint8_t byte3;
   uint8_t byte4;
