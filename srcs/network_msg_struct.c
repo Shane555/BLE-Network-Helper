@@ -33,7 +33,9 @@ int32_t extract_sensor_data_msgA(uint8_t *buf, model_sensor_data_t *sensor_buf)
   }
   uint32_t opcode = extract_opcode(buf);
   if ((opcode != ESP_BLE_MESH_VND_MODEL_OP_GET) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_STATUS) &&
-      (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS))
+      (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS) &&
+      (opcode != ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET_STATUS) &&
+      (opcode != ESP_BLE_MESH_VND_MODEL_OP_ALERT_ACK) )
   {
     return -1;
   }
