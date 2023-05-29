@@ -12,16 +12,23 @@
 #define ESP_BLE_MESH_VND_MODEL_ID_CLIENT 0x0002
 #define ESP_BLE_MESH_VND_MODEL_ID_SERVER 0x0003
 #define UNIVERSAL_GROUP_ADDRESS 0xC000 //only used for fast provisioning purpose, reserved.
+#define CLIENT_GROUP_ADDRESS 0xC001 //group address for client to handle all the messages intended for clients
 
-#define ESP_BLE_MESH_VND_MODEL_OP_GET                SENSOR_PROV_OP_3(0x00, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_STATUS             SENSOR_PROV_OP_3(0x01, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_SET                SENSOR_PROV_OP_3(0x02, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK          SENSOR_PROV_OP_3(0x03, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS        SENSOR_PROV_OP_3(0x04, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_DUMMY_SET          SENSOR_PROV_OP_3(0x05, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_ALERT_ACK          SENSOR_PROV_OP_3(0x06, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET          SENSOR_PROV_OP_3(0x07, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET_STATUS   SENSOR_PROV_OP_3(0x08, CID_ESP)
+#define ESP_BLE_MESH_VND_MODEL_OP_GET                SENSOR_PROV_OP_3(0x00, CID_ESP) //get alarm time period and occupancy of sensor
+#define ESP_BLE_MESH_VND_MODEL_OP_STATUS             SENSOR_PROV_OP_3(0x01, CID_ESP) //status of alarm time period and occupancy of sensor
+#define ESP_BLE_MESH_VND_MODEL_OP_SET                SENSOR_PROV_OP_3(0x02, CID_ESP) //set alarm time period of sensor
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK          SENSOR_PROV_OP_3(0x03, CID_ESP) 
+#define ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS        SENSOR_PROV_OP_3(0x04, CID_ESP) //alarm triggered (someone motionless)
+#define ESP_BLE_MESH_VND_MODEL_OP_DUMMY_SET          SENSOR_PROV_OP_3(0x05, CID_ESP) 
+#define ESP_BLE_MESH_VND_MODEL_OP_ALERT_ACK          SENSOR_PROV_OP_3(0x06, CID_ESP) //alert received acknowledgement
+#define ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET          SENSOR_PROV_OP_3(0x07, CID_ESP) //reset PCS count 
+#define ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET_STATUS   SENSOR_PROV_OP_3(0x08, CID_ESP) //received command to reset PCS count acknowledgement
+#define ESP_BLE_MESH_VND_MODEL_OP_CLEAR_ALERT_LIGHT  SENSOR_PROV_OP_3(0x09, CID_ESP) //switch off alarm light
+#define ESP_BLE_MESH_VND_MODEL_OP_START_ALERT_LIGHT  SENSOR_PROV_OP_3(0x0A, CID_ESP) //switch on alarm light
+#define ESP_BLE_MESH_VND_MODEL_OP_ALERT_LIGHT_STATUS SENSOR_PROV_OP_3(0x0B, CID_ESP) //status of alarm light command
+#define ESP_BLE_MESH_VND_MODEL_OP_HEALTH_STATUS      SENSOR_PROV_OP_3(0x0C, CID_ESP) //health status of sensors
+#define ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_STATUS   SENSOR_PROV_OP_3(0x0C, CID_ESP) //occupancy change triggered (vacant to occupied or vice versa)
+#define ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_ACK      SENSOR_PROV_OP_3(0x0D, CID_ESP) //occupancy change command acknowledgement
 
 #define PROV_MODE_SET         BACKEND_PROV_OP_3(0x00, CID_ESP)
 #define PROV_MODE_GET         BACKEND_PROV_OP_3(0x01, CID_ESP)
@@ -52,7 +59,6 @@
 typedef struct __attribute__((packed))
 {
   uint16_t timer_threshold_sec;
-  uint16_t occupancy;
   uint8_t byte4;
 } model_sensor_data_t;
 
