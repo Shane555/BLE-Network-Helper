@@ -35,7 +35,9 @@ int32_t extract_sensor_data_msgA(uint8_t *buf, model_sensor_data_t *sensor_buf)
   if ((opcode != ESP_BLE_MESH_VND_MODEL_OP_GET) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_STATUS) &&
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS) &&
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_PCS_RESET_STATUS) &&
-      (opcode != ESP_BLE_MESH_VND_MODEL_OP_ALERT_ACK) )
+      (opcode != ESP_BLE_MESH_VND_MODEL_OP_ALERT_ACK) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_CLEAR_ALERT_LIGHT) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_START_ALERT_LIGHT)
+      && (opcode != ESP_BLE_MESH_VND_MODEL_OP_ALERT_LIGHT_STATUS) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_HEALTH_STATUS) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_STATUS)
+      && (opcode != ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_ACK) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION_STATUS) )
   {
     return -1;
   }
