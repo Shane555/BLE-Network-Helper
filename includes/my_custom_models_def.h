@@ -61,6 +61,7 @@
 typedef struct __attribute__((packed))
 {
   uint16_t timer_threshold_sec;
+  uint16_t occupancy;
   uint8_t byte4;
 } model_sensor_data_t;
 
