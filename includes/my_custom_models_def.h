@@ -4,11 +4,7 @@
 
 #include <stdint.h>
 #include "esp_ble_mesh_defs.h"
-
-#define BACKEND_PROV_OP_3(b0, cid)    ((((b0) << 16) | 0xD00000) | (cid))
-#define SENSOR_PROV_OP_3(b0, cid)    ((((b0) << 16) | 0xE00000) | (cid))
-#define SENSOR_PROV_OP_4(b0, cid)    ((((b0) << 16) | 0xF00000) | (cid))
-
+#include "my_custom_models_def_private.h"
 
 #define CID_ESP 0x02E5 //esp's company id for BLE
 #define ESP_BLE_MESH_VND_MODEL_ID_CLIENT 0x0002
@@ -34,7 +30,6 @@
 #define ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_ACK        SENSOR_PROV_OP_3(0x0E, CID_ESP) //occupancy change command acknowledgement
 #define ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION        SENSOR_PROV_OP_3(0x0F, CID_ESP) //send a command to recalibrate PCS
 #define ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION_STATUS SENSOR_PROV_OP_4(0x00, CID_ESP) //reply to recalibration commmand with a success
-
 
 #define PROV_MODE_SET         BACKEND_PROV_OP_3(0x00, CID_ESP)
 #define PROV_MODE_GET         BACKEND_PROV_OP_3(0x01, CID_ESP)
