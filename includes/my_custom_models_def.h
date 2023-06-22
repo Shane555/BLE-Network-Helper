@@ -6,28 +6,31 @@
 #include "esp_ble_mesh_defs.h"
 
 #define BACKEND_PROV_OP_3(b0, cid)    ((((b0) << 16) | 0xD00000) | (cid))
+#define SENSOR_PROV_OP_3(b0, cid)    ((((b0) << 16) | 0xE00000) | (cid))
+
 #define CID_ESP 0x02E5 //esp's company id for BLE
 #define ESP_BLE_MESH_VND_MODEL_ID_CLIENT 0x0002
 #define ESP_BLE_MESH_VND_MODEL_ID_SERVER 0x0003
+#define UNIVERSAL_GROUP_ADDRESS 0xC000 //only used for fast provisioning purpose, reserved.
 
-#define ESP_BLE_MESH_VND_MODEL_OP_GET ESP_BLE_MESH_MODEL_OP_3(0x0A, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_STATUS ESP_BLE_MESH_MODEL_OP_3(0x0B, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_SET ESP_BLE_MESH_MODEL_OP_3(0x0C, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK ESP_BLE_MESH_MODEL_OP_3(0x0D, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS ESP_BLE_MESH_MODEL_OP_3(0x0E, CID_ESP)
-#define ESP_BLE_MESH_VND_MODEL_OP_DUMMY_SET ESP_BLE_MESH_MODEL_OP_3(0x0F, CID_ESP)
+#define ESP_BLE_MESH_VND_MODEL_OP_GET           SENSOR_PROV_OP_3(0x00, CID_ESP)
+#define ESP_BLE_MESH_VND_MODEL_OP_STATUS        SENSOR_PROV_OP_3(0x01, CID_ESP)
+#define ESP_BLE_MESH_VND_MODEL_OP_SET           SENSOR_PROV_OP_3(0x02, CID_ESP)
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK     SENSOR_PROV_OP_3(0x03, CID_ESP)
+#define ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS   SENSOR_PROV_OP_3(0x04, CID_ESP)
+#define ESP_BLE_MESH_VND_MODEL_OP_DUMMY_SET     SENSOR_PROV_OP_3(0x05, CID_ESP)
 #define ESP_BLE_MESH_VND_MODEL_OP_HEALTH_STATUS SENSOR_PROV_OP_3(0x0C, CID_ESP) //health status of sensors
 
-#define PROV_MODE_SET BACKEND_PROV_OP_3(0x00, CID_ESP)
-#define PROV_MODE_GET BACKEND_PROV_OP_3(0x01, CID_ESP)
-#define PROV_MODE_STATUS BACKEND_PROV_OP_3(0x02, CID_ESP)
-#define PROV_MODE_NODE_RESET BACKEND_PROV_OP_3(0x03, CID_ESP)
-#define PROV_ADD_NETKEY BACKEND_PROV_OP_3(0x04, CID_ESP)
-#define PROV_ADD_APPKEY BACKEND_PROV_OP_3(0x05, CID_ESP)
-#define PROV_KEY_SUCCESS BACKEND_PROV_OP_3(0x06, CID_ESP)
-#define PROV_KEY_FAIL BACKEND_PROV_OP_3(0x07, CID_ESP)
-#define MESH_CLIENT_TIMEOUT BACKEND_PROV_OP_3(0x08, CID_ESP)
-#define PROV_NODE_INFO BACKEND_PROV_OP_3(0x0F, CID_ESP)
+#define PROV_MODE_SET         BACKEND_PROV_OP_3(0x00, CID_ESP)
+#define PROV_MODE_GET         BACKEND_PROV_OP_3(0x01, CID_ESP)
+#define PROV_MODE_STATUS      BACKEND_PROV_OP_3(0x02, CID_ESP)
+#define PROV_MODE_NODE_RESET  BACKEND_PROV_OP_3(0x03, CID_ESP)
+#define PROV_ADD_NETKEY       BACKEND_PROV_OP_3(0x04, CID_ESP)
+#define PROV_ADD_APPKEY       BACKEND_PROV_OP_3(0x05, CID_ESP)
+#define PROV_KEY_SUCCESS      BACKEND_PROV_OP_3(0x06, CID_ESP)
+#define PROV_KEY_FAIL         BACKEND_PROV_OP_3(0x07, CID_ESP)
+#define MESH_CLIENT_TIMEOUT   BACKEND_PROV_OP_3(0x08, CID_ESP)
+#define PROV_NODE_INFO        BACKEND_PROV_OP_3(0x0F, CID_ESP)
 
 #define SENSOR_PAYLOAD_BYTES 8
 #define MSG_C_BYTES (SENSOR_PAYLOAD_BYTES+5)
@@ -43,7 +46,6 @@
 #define MSG_SEND_TTL 7
 #define MSG_SEND_REL false
 #define MSG_TIMEOUT 0
-#define MSG_ROLE ROLE_NODE
 
 typedef struct __attribute__((packed))
 {
@@ -56,7 +58,6 @@ typedef struct __attribute__((packed))
   uint8_t byte6;
   uint8_t byte7;
 } model_sensor_data_t;
-
 
 typedef struct {
   uint32_t prov_payload;
@@ -75,12 +76,11 @@ typedef struct {
 }prov_mode_node_reset_t;
 
 typedef struct {
-  uint16_t net_idx;
+  uint32_t prov_payload;
 }prov_add_netkey_t;
 
 typedef struct {
   uint16_t net_idx;
-  uint16_t app_idx;
 }prov_add_appkey_t;
 
 typedef struct {
@@ -102,6 +102,7 @@ typedef union {
   prov_add_appkey_t prov_add_app_key;
   prov_key_success_t prov_key_success;
   prov_key_fail_t prov_key_fail;
-} backend_prov_data_t;
+  } backend_prov_data_t;
 
 #endif //CUSTOM_MODELS_DEF
+
