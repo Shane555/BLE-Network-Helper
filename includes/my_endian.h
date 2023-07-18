@@ -128,7 +128,7 @@
 	#elif defined(__sparc) || defined(__sparc__) || \
 		defined(_POWER) || defined(__powerpc__) || \
 		defined(__ppc__) || defined(__hpux) || defined(__hppa) || \
-		defined(_MIPSEB) || defined(__s390__)
+		defined(_MIPSEB) || defined(__s390__) || defined(__ARMEB__)
 
 		#define BYTE_ORDER BIG_ENDIAN
 
@@ -138,7 +138,9 @@
 		defined(_M_ALPHA) || defined(__amd64) || \
 		defined(__amd64__) || defined(_M_AMD64) || \
 		defined(__x86_64) || defined(__x86_64__) || \
-		defined(_M_X64) || defined(__bfin__)
+		defined(_M_X64) || defined(__bfin__) || \
+		defined(__ARMEL__)
+
 
 		#define BYTE_ORDER LITTLE_ENDIAN
 
