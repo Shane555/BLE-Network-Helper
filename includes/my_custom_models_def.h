@@ -34,6 +34,8 @@
 #define ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT_ACK       SENSOR_PROV_OP_4(0x02, CID_ESP) //acknowledgement for fall alert msg 
 #define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_BOUNDARY   SENSOR_PROV_OP_4(0x03, CID_ESP) //configuration of MP555's boundary of interest
 #define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_CONFIG     SENSOR_PROV_OP_4(0x04, CID_ESP) //configuration of MP555's deployment height, motion distance and cluster size
+#define ESP_BLE_MESH_VND_MODEL_OP_MP555_BOUNDARY_STATUS SENSOR_PROV_OP_4(0x05, CID_ESP) //status response to config of MP555's boundary of interest
+#define ESP_BLE_MESH_VND_MODEL_OP_MP555_CONFIG_STATUS   SENSOR_PROV_OP_4(0x06, CID_ESP) //status response to MP555's deployment height, motion distance and cluster size
 
 #define PROV_MODE_SET         BACKEND_PROV_OP_3(0x00, CID_ESP)
 #define PROV_MODE_GET         BACKEND_PROV_OP_3(0x01, CID_ESP)
