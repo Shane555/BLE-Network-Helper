@@ -37,6 +37,10 @@
 #define ESP_BLE_MESH_VND_MODEL_OP_MP555_BOUNDARY_STATUS SENSOR_PROV_OP_4(0x05, CID_ESP) //status response to config of MP555's boundary of interest
 #define ESP_BLE_MESH_VND_MODEL_OP_MP555_CONFIG_STATUS   SENSOR_PROV_OP_4(0x06, CID_ESP) //status response to MP555's deployment height, motion distance and cluster size
 
+#define GET_TEST_DATA_FLAGS    SENSOR_PROV_OP_5(0x00, CID_ESP) //for testing purpose only
+#define TEST_DATA_FLAGS_STATUS SENSOR_PROV_OP_5(0x01, CID_ESP) // for testing only
+
+
 #define PROV_MODE_SET         BACKEND_PROV_OP_3(0x00, CID_ESP)
 #define PROV_MODE_GET         BACKEND_PROV_OP_3(0x01, CID_ESP)
 #define PROV_MODE_STATUS      BACKEND_PROV_OP_3(0x02, CID_ESP)
