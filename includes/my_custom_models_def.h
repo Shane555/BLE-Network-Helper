@@ -79,11 +79,11 @@ typedef struct __attribute__((packed))
 
 typedef struct __attribute__((packed))
 {
-  uint8_t xmin;
-  uint8_t xmax;
-  uint8_t zmin;
-  uint8_t zmax;
-  uint8_t placeholder;
+  int8_t xmin;
+  int8_t xmax;
+  int8_t zmin;
+  int8_t zmax;
+  uint8_t fall_cluster_size;
 } mp555_boundary_t;
 
 typedef struct __attribute__((packed))
