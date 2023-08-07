@@ -36,10 +36,14 @@
 #define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_CONFIG      SENSOR_PROV_OP_4(0x04, CID_ESP) //configuration of MP555's deployment height, motion distance and cluster size
 #define ESP_BLE_MESH_VND_MODEL_OP_MP555_BOUNDARY_STATUS SENSOR_PROV_OP_4(0x05, CID_ESP) //status response to config of MP555's boundary of interest
 #define ESP_BLE_MESH_VND_MODEL_OP_MP555_CONFIG_STATUS   SENSOR_PROV_OP_4(0x06, CID_ESP) //status response to MP555's deployment height, motion distance and cluster size
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_REG         SENSOR_PROV_OP_4(0x07, CID_ESP) //tentative command
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_REG_STATUS  SENSOR_PROV_OP_4(0x08, CID_ESP) //tentative command
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_FALL_FACTOR       SENSOR_PROV_OP_4(0x09, CID_ESP) //set fall factor (0 to 100) for fall factor algorithm in the system
+#define ESP_BLE_MESH_VND_MODEL_OP_FALL_FACTOR_STATUS    SENSOR_PROV_OP_4(0x0A, CID_ESP) //fall factor status response
+
 
 #define GET_TEST_DATA_FLAGS    SENSOR_PROV_OP_5(0x00, CID_ESP) //for testing purpose only
 #define TEST_DATA_FLAGS_STATUS SENSOR_PROV_OP_5(0x01, CID_ESP) // for testing only
-
 
 #define PROV_MODE_SET         BACKEND_PROV_OP_3(0x00, CID_ESP)
 #define PROV_MODE_GET         BACKEND_PROV_OP_3(0x01, CID_ESP)
@@ -93,10 +97,18 @@ typedef struct __attribute__((packed))
   uint8_t cluster_size;
 } mp555_config_t;
 
+typedef struct __attribute__((packed))
+{
+  uint16_t register_addr;
+  int16_t register_val;
+  uint8_t fall_factor;
+} special_command_t;
+
 typedef union {
   state_attr_t state_attr;
   mp555_boundary_t mp555_boundary;
   mp555_config_t mp555_config;
+  special_command_t special_command;
 }model_sensor_data_t;
 
 typedef struct {

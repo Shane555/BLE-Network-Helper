@@ -43,6 +43,7 @@ int32_t extract_sensor_data_msgA(uint8_t *buf, model_sensor_data_t *sensor_buf)
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT_ACK) &&
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_BOUNDARY) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_CONFIG) &&
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_MP555_BOUNDARY_STATUS) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_MP555_CONFIG_STATUS) &&
+      (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_FALL_FACTOR) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_FALL_FACTOR_STATUS) &&
       (opcode != GET_TEST_DATA_FLAGS) && (opcode != TEST_DATA_FLAGS_STATUS) )
   {
     return -1;
@@ -69,20 +70,20 @@ int32_t extract_backend_prov_data_msgA(uint8_t *buf, backend_prov_data_t *prov_d
 
 int32_t extract_all_node_data_msgA(uint8_t *buf, esp_ble_mesh_node_t **node_info)
 {
-  _Static_assert(sizeof(esp_ble_mesh_node_t) == 89,"platform must treat esp_ble_mesh_node_t as 89 bytes");  //sanity check for portability issues
+  _Static_assert(sizeof(esp_ble_mesh_node_t) == 89, "platform must treat esp_ble_mesh_node_t as 89 bytes"); // sanity check for portability issues
   if (buf == NULL)
     return -1;
   int32_t node_num = 0;
-  node_num = ((*(buf + 4)) << 8) + ((*(buf + 3)) << 0); //buffer's 4th and 5th byte is for node_num
+  node_num = ((*(buf + 4)) << 8) + ((*(buf + 3)) << 0); // buffer's 4th and 5th byte is for node_num
   *node_info = NULL;
   *node_info = malloc(sizeof(esp_ble_mesh_node_t) * node_num);
-  if (( *node_info) == NULL)
+  if ((*node_info) == NULL)
     return -1;
-  memcpy( (*node_info), buf + 5, sizeof(esp_ble_mesh_node_t) * node_num); 
+  memcpy((*node_info), buf + 5, sizeof(esp_ble_mesh_node_t) * node_num);
   return node_num;
 }
 
-void free_node_data(esp_ble_mesh_node_t** node_info)
+void free_node_data(esp_ble_mesh_node_t **node_info)
 {
   free(*node_info);
 }
@@ -105,7 +106,7 @@ uint8_t *set_sensor_data_msgA(uint32_t opcode, uint16_t addr, model_sensor_data_
 
 uint8_t *set_bt_data_msgA(uint32_t opcode, uint16_t addr, cfg_state_t *state)
 {
-  _Static_assert(sizeof(cfg_state_t) == BLE_NET_CONFIG_PAYLOAD_BYTES,"platform must treat cfg_state_t as 28 bytes");  //sanity check for portability issues
+  _Static_assert(sizeof(cfg_state_t) == BLE_NET_CONFIG_PAYLOAD_BYTES, "platform must treat cfg_state_t as 28 bytes"); // sanity check for portability issues
   static uint8_t buf[MSG_A_CONFIG_BYTES] = {0};
   memset(buf, 0, MSG_A_CONFIG_BYTES);
   if (state == NULL)
@@ -130,7 +131,7 @@ uint8_t *set_backend_prov_data_msgA(uint32_t opcode, backend_prov_data_t *prov_d
   memcpy(buf, &opcode, 3);
   memcpy(buf + 3, prov_data, sizeof(backend_prov_data_t));
   uint16_t crc = CRCCCITT((uint8_t *)buf, MSG_A_BACKEND_PROV_BYTES - 2); // generate crc checksum
-  crc = htobe16(crc);                                              // needs to be packed in big endian format to ensure checksum works
+  crc = htobe16(crc);                                                    // needs to be packed in big endian format to ensure checksum works
   memcpy(buf + sizeof(backend_prov_data_t) + 3, &crc, 2);
   return buf;
 }
