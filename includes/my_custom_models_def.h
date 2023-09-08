@@ -13,34 +13,38 @@
 #define CLIENT_GROUP_ADDRESS 0xC001 //group address for client to handle all the messages intended for clients
 
 
-#define ESP_BLE_MESH_VND_MODEL_OP_GET                   SENSOR_PROV_OP_3(0x00, CID_ESP) //get alarm time period and occupancy of sensor
-#define ESP_BLE_MESH_VND_MODEL_OP_STATUS                SENSOR_PROV_OP_3(0x01, CID_ESP) //status of alarm time period and occupancy of sensor
-#define ESP_BLE_MESH_VND_MODEL_OP_SET                   SENSOR_PROV_OP_3(0x02, CID_ESP) //set alarm time period of sensor
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK             SENSOR_PROV_OP_3(0x03, CID_ESP) 
-#define ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS           SENSOR_PROV_OP_3(0x04, CID_ESP) //alarm triggered (someone motionless)
-#define ESP_BLE_MESH_VND_MODEL_OP_DUMMY_SET             SENSOR_PROV_OP_3(0x05, CID_ESP) 
-#define ESP_BLE_MESH_VND_MODEL_OP_ALERT_ACK             SENSOR_PROV_OP_3(0x06, CID_ESP) //alert received acknowledgement
-#define ESP_BLE_MESH_VND_MODEL_OP_MP555_RESET           SENSOR_PROV_OP_3(0x07, CID_ESP) //soft reset MP555 module
-#define ESP_BLE_MESH_VND_MODEL_OP_MP555_RESET_STATUS    SENSOR_PROV_OP_3(0x08, CID_ESP) //received command to reset MP555
-#define ESP_BLE_MESH_VND_MODEL_OP_CLEAR_ALERT_LIGHT     SENSOR_PROV_OP_3(0x09, CID_ESP) //switch off alarm light
-#define ESP_BLE_MESH_VND_MODEL_OP_START_ALERT_LIGHT     SENSOR_PROV_OP_3(0x0A, CID_ESP) //switch on alarm light
-#define ESP_BLE_MESH_VND_MODEL_OP_ALERT_LIGHT_STATUS    SENSOR_PROV_OP_3(0x0B, CID_ESP) //status of alarm light command
-#define ESP_BLE_MESH_VND_MODEL_OP_HEALTH_STATUS         SENSOR_PROV_OP_3(0x0C, CID_ESP) //health status of sensors
-#define ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_STATUS      SENSOR_PROV_OP_3(0x0D, CID_ESP) //occupancy change triggered (vacant to occupied or vice versa)
-#define ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_ACK         SENSOR_PROV_OP_3(0x0E, CID_ESP) //occupancy change command acknowledgement
-#define ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION         SENSOR_PROV_OP_3(0x0F, CID_ESP) //send a command to recalibrate MP555
-#define ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION_STATUS  SENSOR_PROV_OP_4(0x00, CID_ESP) //reply to recalibration commmand with a success
-#define ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT            SENSOR_PROV_OP_4(0x01, CID_ESP) //fall alert after certain period
-#define ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT_ACK        SENSOR_PROV_OP_4(0x02, CID_ESP) //acknowledgement for fall alert msg 
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_BOUNDARY    SENSOR_PROV_OP_4(0x03, CID_ESP) //configuration of MP555's boundary of interest
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_CONFIG      SENSOR_PROV_OP_4(0x04, CID_ESP) //configuration of MP555's deployment height, motion distance and cluster size
-#define ESP_BLE_MESH_VND_MODEL_OP_MP555_BOUNDARY_STATUS SENSOR_PROV_OP_4(0x05, CID_ESP) //status response to config of MP555's boundary of interest
-#define ESP_BLE_MESH_VND_MODEL_OP_MP555_CONFIG_STATUS   SENSOR_PROV_OP_4(0x06, CID_ESP) //status response to MP555's deployment height, motion distance and cluster size
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_REG         SENSOR_PROV_OP_4(0x07, CID_ESP) //tentative command
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_REG_STATUS  SENSOR_PROV_OP_4(0x08, CID_ESP) //tentative command
-#define ESP_BLE_MESH_VND_MODEL_OP_SET_FALL_FACTOR       SENSOR_PROV_OP_4(0x09, CID_ESP) //set fall factor (0 to 100) for fall factor algorithm in the system
-#define ESP_BLE_MESH_VND_MODEL_OP_FALL_FACTOR_STATUS    SENSOR_PROV_OP_4(0x0A, CID_ESP) //fall factor status response
+#define ESP_BLE_MESH_VND_MODEL_OP_GET                       SENSOR_PROV_OP_3(0x00, CID_ESP) //get alarm time period and occupancy of sensor
+#define ESP_BLE_MESH_VND_MODEL_OP_STATUS                    SENSOR_PROV_OP_3(0x01, CID_ESP) //status of alarm time period and occupancy of sensor
+#define ESP_BLE_MESH_VND_MODEL_OP_SET                       SENSOR_PROV_OP_3(0x02, CID_ESP) //set alarm time period of sensor
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_UNACK                 SENSOR_PROV_OP_3(0x03, CID_ESP) 
+#define ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS               SENSOR_PROV_OP_3(0x04, CID_ESP) //alarm triggered (someone motionless)
+#define ESP_BLE_MESH_VND_MODEL_OP_DUMMY_SET                 SENSOR_PROV_OP_3(0x05, CID_ESP) 
+#define ESP_BLE_MESH_VND_MODEL_OP_ALERT_ACK                 SENSOR_PROV_OP_3(0x06, CID_ESP) //alert received acknowledgement
+#define ESP_BLE_MESH_VND_MODEL_OP_MP555_RESET               SENSOR_PROV_OP_3(0x07, CID_ESP) //soft reset MP555 module
+#define ESP_BLE_MESH_VND_MODEL_OP_MP555_RESET_STATUS        SENSOR_PROV_OP_3(0x08, CID_ESP) //received command to reset MP555
+#define ESP_BLE_MESH_VND_MODEL_OP_CLEAR_ALERT_LIGHT         SENSOR_PROV_OP_3(0x09, CID_ESP) //switch off alarm light
+#define ESP_BLE_MESH_VND_MODEL_OP_START_ALERT_LIGHT         SENSOR_PROV_OP_3(0x0A, CID_ESP) //switch on alarm light
+#define ESP_BLE_MESH_VND_MODEL_OP_ALERT_LIGHT_STATUS        SENSOR_PROV_OP_3(0x0B, CID_ESP) //status of alarm light command
+#define ESP_BLE_MESH_VND_MODEL_OP_HEALTH_STATUS             SENSOR_PROV_OP_3(0x0C, CID_ESP) //health status of sensors
+#define ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_STATUS          SENSOR_PROV_OP_3(0x0D, CID_ESP) //occupancy change triggered (vacant to occupied or vice versa)
+#define ESP_BLE_MESH_VND_MODEL_OP_OCCUPANCY_ACK             SENSOR_PROV_OP_3(0x0E, CID_ESP) //occupancy change command acknowledgement
+#define ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION             SENSOR_PROV_OP_3(0x0F, CID_ESP) //send a command to recalibrate MP555
+#define ESP_BLE_MESH_VND_MODEL_OP_RECALIBRATION_STATUS      SENSOR_PROV_OP_4(0x00, CID_ESP) //reply to recalibration commmand with a success
+#define ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT                SENSOR_PROV_OP_4(0x01, CID_ESP) //fall alert after certain period
+#define ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT_ACK            SENSOR_PROV_OP_4(0x02, CID_ESP) //acknowledgement for fall alert msg 
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_BOUNDARY        SENSOR_PROV_OP_4(0x03, CID_ESP) //configuration of MP555's boundary of interest
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_CONFIG          SENSOR_PROV_OP_4(0x04, CID_ESP) //configuration of MP555's cluster size, fall cluster size, holding times of occcupancy and fall
+#define ESP_BLE_MESH_VND_MODEL_OP_MP555_BOUNDARY_STATUS     SENSOR_PROV_OP_4(0x05, CID_ESP) //status response to config of MP555's boundary of interest
+#define ESP_BLE_MESH_VND_MODEL_OP_MP555_CONFIG_STATUS       SENSOR_PROV_OP_4(0x06, CID_ESP) //status response to MP555's cluster size, fall cluster size, holding times of occcupancy and fall
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_REG             SENSOR_PROV_OP_4(0x07, CID_ESP) //set any registers of mp555
+#define ESP_BLE_MESH_VND_MODEL_OP_MP555_REG_STATUS          SENSOR_PROV_OP_4(0x08, CID_ESP) //response of setting any registers of mp555
+#define ESP_BLE_MESH_VND_MODEL_OP_SET_DEPLOYMENT_HEIGHT     SENSOR_PROV_OP_4(0x09, CID_ESP) //set deployment height
+#define ESP_BLE_MESH_VND_MODEL_OP_DEPLOYMENT_HEIGHT_STATUS  SENSOR_PROV_OP_4(0x0A, CID_ESP) //deployment height status response
 
+
+//ERROR CODES
+#define ERR_MP555_OK 0x0000
+#define ERR_MP555_NO_DATA 0x0001
 
 #define GET_TEST_DATA_FLAGS    SENSOR_PROV_OP_5(0x00, CID_ESP) //for testing purpose only
 #define TEST_DATA_FLAGS_STATUS SENSOR_PROV_OP_5(0x01, CID_ESP) // for testing only
@@ -87,26 +91,35 @@ typedef struct __attribute__((packed))
   int8_t xmax;
   int8_t zmin;
   int8_t zmax;
-  uint8_t fall_cluster_size;
+  uint8_t placeholder;
 } mp555_boundary_t;
 
 typedef struct __attribute__((packed))
 {
   uint16_t deployment_height;
-  uint16_t motion_distance;
-  uint8_t cluster_size;
+  uint16_t placeholder;
+  uint8_t placeholder_2;
+} mp555_deploy_height_t;
+
+typedef struct __attribute__((packed))
+{
+  uint16_t cluster_size;
+  uint8_t fall_cluster_size;
+  uint8_t occ_holding_time;
+  uint8_t fall_holding_time;
 } mp555_config_t;
 
 typedef struct __attribute__((packed))
 {
   uint16_t register_addr;
   int16_t register_val;
-  uint8_t fall_factor;
+  uint8_t placeholder;
 } special_command_t;
 
 typedef union {
   state_attr_t state_attr;
   mp555_boundary_t mp555_boundary;
+  mp555_deploy_height_t mp555_deploy_height;
   mp555_config_t mp555_config;
   special_command_t special_command;
 }model_sensor_data_t;

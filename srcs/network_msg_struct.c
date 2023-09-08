@@ -43,7 +43,8 @@ int32_t extract_sensor_data_msgA(uint8_t *buf, model_sensor_data_t *sensor_buf)
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_FALL_ALERT_ACK) &&
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_BOUNDARY) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_CONFIG) &&
       (opcode != ESP_BLE_MESH_VND_MODEL_OP_MP555_BOUNDARY_STATUS) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_MP555_CONFIG_STATUS) &&
-      (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_FALL_FACTOR) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_FALL_FACTOR_STATUS) &&
+      (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_DEPLOYMENT_HEIGHT) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_DEPLOYMENT_HEIGHT_STATUS) &&
+      (opcode != ESP_BLE_MESH_VND_MODEL_OP_SET_MP555_REG) && (opcode != ESP_BLE_MESH_VND_MODEL_OP_MP555_REG_STATUS) &&
       (opcode != GET_TEST_DATA_FLAGS) && (opcode != TEST_DATA_FLAGS_STATUS) )
   {
     return -1;
