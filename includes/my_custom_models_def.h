@@ -20,6 +20,7 @@
 #define ESP_BLE_MESH_VND_MODEL_OP_INTR_STATUS   SENSOR_PROV_OP_3(0x04, CID_ESP)
 #define ESP_BLE_MESH_VND_MODEL_OP_DUMMY_SET     SENSOR_PROV_OP_3(0x05, CID_ESP)
 #define ESP_BLE_MESH_VND_MODEL_OP_HEALTH_STATUS SENSOR_PROV_OP_3(0x0C, CID_ESP) //health status of sensors
+#define ESP_CLIENT_EMERGENCY_RESET              SENSOR_PROV_OP_3(0x0F, CID_ESP) //emergency reset of client ble node. not a BLE opcode protocol. used for gateway to communicate to Client BLE Node only
 
 #define PROV_MODE_SET         BACKEND_PROV_OP_3(0x00, CID_ESP)
 #define PROV_MODE_GET         BACKEND_PROV_OP_3(0x01, CID_ESP)
